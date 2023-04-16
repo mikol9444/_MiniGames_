@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ObjectPooler
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 863bc6006f8126a4ba8eabad352a57cb,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.size
+    value: 5
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[0].poolName
+    value: default
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[0].prefab
+    value: 
+    objectReference: {fileID: 4913719573228808377, guid: eda697fcbb7c842469b82ac375f4de6c,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[0].maxPoolSize
+    value: 150
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[0].preinstantiateAmount
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[0].expandable
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[1].poolName
+    value: Projectile_Pi
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[1].prefab
+    value: 
+    objectReference: {fileID: 7549440216999987439, guid: 6e217a07046bd4240a5b46b8e9159b2d,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[1].maxPoolSize
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[1].preinstantiateAmount
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[1].expandable
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[2].poolName
+    value: Projectile_Sh
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[2].prefab
+    value: 
+    objectReference: {fileID: 7549440216999987439, guid: 97b08e2547cf04748ac03f6795521c6b,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[2].maxPoolSize
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[2].preinstantiateAmount
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[2].expandable
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[3].poolName
+    value: Projectile_La
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[3].prefab
+    value: 
+    objectReference: {fileID: 3905092305030167506, guid: 27ec0cdd3506c414581777e01643ad34,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[3].maxPoolSize
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[3].preinstantiateAmount
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[3].expandable
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[4].poolName
+    value: Projectile_Ge
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[4].prefab
+    value: 
+    objectReference: {fileID: 7549440216999987439, guid: 45956ca972279e04b873d94991bc8eb9,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[4].maxPoolSize
+    value: 50
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[4].preinstantiateAmount
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: pools.Array.data[4].expandable
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

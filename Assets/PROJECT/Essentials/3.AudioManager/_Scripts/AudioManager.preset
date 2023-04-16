@@ -1,0 +1,256 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AudioManager
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: b3592124a460d264092b7a587fb4b2c4,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.size
+    value: 7
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[0].NAME
+    value: Shoot
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[0].audioClip
+    value: 
+    objectReference: {fileID: 8300000, guid: 8665c3222eb0d5f4886a74523ad3a67c, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[0].audioSource
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[0].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[0].volume
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[0].isRunning
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[0].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[0].playOnStart
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[1].NAME
+    value: Fliesche
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[1].audioClip
+    value: 
+    objectReference: {fileID: 8300000, guid: c28c943bdd2384a488066671e76d2499, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[1].audioSource
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[1].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[1].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[1].isRunning
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[1].loop
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[1].playOnStart
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[2].NAME
+    value: Shot
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[2].audioClip
+    value: 
+    objectReference: {fileID: 8300000, guid: d89554a49fd353346bba5ccd12506cad, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[2].audioSource
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[2].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[2].volume
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[2].isRunning
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[2].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[2].playOnStart
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[3].NAME
+    value: Rocket
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[3].audioClip
+    value: 
+    objectReference: {fileID: 8300000, guid: 6e9df3599f3b5a240887f3e613cf9561, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[3].audioSource
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[3].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[3].volume
+    value: 0.3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[3].isRunning
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[3].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[3].playOnStart
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[4].NAME
+    value: Music
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[4].audioClip
+    value: 
+    objectReference: {fileID: 8300000, guid: 2f103069c28f0cc4dafd693284073faf, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[4].audioSource
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[4].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[4].volume
+    value: 0.1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[4].isRunning
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[4].loop
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[4].playOnStart
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[5].NAME
+    value: Ambient
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[5].audioClip
+    value: 
+    objectReference: {fileID: 8300000, guid: 08990ee4d90772b4599b15b5d16a3eaf, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[5].audioSource
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[5].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[5].volume
+    value: 0.2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[5].isRunning
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[5].loop
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[5].playOnStart
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[6].NAME
+    value: Jump
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[6].audioClip
+    value: 
+    objectReference: {fileID: 8300000, guid: cb7e306379756bc43827b7e6501f8a97, type: 3}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[6].audioSource
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[6].pitch
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[6].volume
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[6].isRunning
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[6].loop
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioFiles.Array.data[6].playOnStart
+    value: 0
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

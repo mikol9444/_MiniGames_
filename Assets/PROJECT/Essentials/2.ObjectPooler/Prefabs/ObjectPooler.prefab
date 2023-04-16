@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8804168460048778051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8804168460048778077}
+  - component: {fileID: 8804168460048778076}
+  m_Layer: 0
+  m_Name: ObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8804168460048778077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804168460048778051}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8804168460048778076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8804168460048778051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 863bc6006f8126a4ba8eabad352a57cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools:
+  - poolName: default
+    prefab: {fileID: 4913719573228808377, guid: eda697fcbb7c842469b82ac375f4de6c,
+      type: 3}
+    maxPoolSize: 150
+    preinstantiateAmount: 0
+    expandable: 0
+  - poolName: Projectile_Pi
+    prefab: {fileID: 7549440216999987439, guid: 6e217a07046bd4240a5b46b8e9159b2d,
+      type: 3}
+    maxPoolSize: 50
+    preinstantiateAmount: 0
+    expandable: 0
+  - poolName: Projectile_Sh
+    prefab: {fileID: 7549440216999987439, guid: 97b08e2547cf04748ac03f6795521c6b,
+      type: 3}
+    maxPoolSize: 50
+    preinstantiateAmount: 0
+    expandable: 0
