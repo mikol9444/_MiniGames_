@@ -26,7 +26,7 @@ public class Lava_test : MonoBehaviour
     IEnumerator Respawn(float timer, Transform playerTransform)
     {
         yield return new WaitForSeconds(timer);
-        playerTransform.position = new Vector3(-3f, -3f, 0f);
+        playerTransform.position = new Vector3(0f, 0f, 0f);
         playerTransform.gameObject.SetActive(true);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.EditorTools;
 using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
@@ -59,7 +60,9 @@ public class ObjectPooler : MonoBehaviour
         }
         return null;
     }
-
+    /// <summary>
+    ///Return or Instantiates first inactive Object in Pool , you have still to set up Vector3 Coordinates manually"
+    /// </summary>
     public GameObject PoolObject(string poolName)
     {
         Pool pool = SelectPool(poolName);

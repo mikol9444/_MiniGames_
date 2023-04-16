@@ -26,7 +26,8 @@ public class AudioManager_Test : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        instance = instance == null ? this : null;
+        if (!instance) Destroy(gameObject);
         sources = new AudioSource[audioFiles.Length];
         for (int i = 0; i < audioFiles.Length; i++)
         {
@@ -45,6 +46,7 @@ public class AudioManager_Test : MonoBehaviour
                 PlaySound(item.NAME);
             }
         }
+        DontDestroyOnLoad(this);
     }
 
     public void PlaySound(string name)
