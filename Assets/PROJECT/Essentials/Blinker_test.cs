@@ -14,7 +14,7 @@ public class Blinker_test : MonoBehaviour
     {
         // Get all the renderers in the object and its children
         renderers = GetComponentsInChildren<Renderer>();
-        startColor = GetComponent<Renderer>().material.color;
+        startColor = GetComponentInChildren<Renderer>().material.color;
     }
 
     public void StartBlink()
@@ -27,7 +27,7 @@ public class Blinker_test : MonoBehaviour
     }
     private void OnDisable()
     {
-        GetComponent<Renderer>().material.color = startColor;
+        GetComponentInChildren<Renderer>().material.color = startColor;
         isBlinking = false;
     }
     private IEnumerator BlinkCoroutine()

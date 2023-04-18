@@ -20,7 +20,7 @@ public class UIListener : MonoBehaviour
         InputManager.Instance._inputReader.JumpEvent += UpdateJumpImage;
         InputManager.Instance._inputReader.SprintEvent += UpdateSprintImage;
         InputManager.Instance._inputReader.PauseEvent += UpdatePauseImage;
-        InputManager.Instance._inputReader.TestEvent += UpdateTestImage;
+        // InputManager.Instance._inputReader.TestEvent += UpdateTestImage;
     }
     private void OnApplicationQuit()
     {
@@ -29,7 +29,7 @@ public class UIListener : MonoBehaviour
         InputManager.Instance._inputReader.JumpEvent -= UpdateJumpImage;
         InputManager.Instance._inputReader.SprintEvent -= UpdateSprintImage;
         InputManager.Instance._inputReader.PauseEvent -= UpdatePauseImage;
-        InputManager.Instance._inputReader.TestEvent -= UpdateTestImage;
+        // InputManager.Instance._inputReader.TestEvent -= UpdateTestImage; 
     }
     public void Activate()
     {

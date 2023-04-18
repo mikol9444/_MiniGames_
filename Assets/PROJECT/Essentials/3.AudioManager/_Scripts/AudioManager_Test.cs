@@ -19,15 +19,15 @@ public struct AudioFile
 public class AudioManager_Test : MonoBehaviour
 {
     //
-    public static AudioManager_Test instance;
+    public static AudioManager_Test Instance;
     [SerializeField] private AudioFile[] audioFiles;
     private Dictionary<string, int> audioFileIndex = new Dictionary<string, int>();
     AudioSource[] sources;
 
     private void Awake()
     {
-        instance = instance == null ? this : null;
-        if (!instance) Destroy(gameObject);
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
         sources = new AudioSource[audioFiles.Length];
         for (int i = 0; i < audioFiles.Length; i++)
         {

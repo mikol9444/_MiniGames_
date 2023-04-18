@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
         _fallTimeoutDelta = FallTimeout;
         AssignAnimationIDs();
 
-        audioManager = AudioManager_Test.instance;
+        audioManager = AudioManager_Test.Instance;
         _hasAudiomanager = audioManager;
 
         // ------------------TROLLING SECTION ----------------------------------------
@@ -159,12 +159,12 @@ public class PlayerController : MonoBehaviour
         if (Vector2.zero == zero)
         {
             FLIESCHEEE = false;
-            AudioManager_Test.instance.StopSound("Fliesche");
+            AudioManager_Test.Instance.StopSound("Fliesche");
         }
         else if (!FLIESCHEEE)
         {
             FLIESCHEEE = true;
-            AudioManager_Test.instance.PlaySound("Fliesche");
+            AudioManager_Test.Instance.PlaySound("Fliesche");
         }
     }
     private void JumpLOL(bool jumping)
@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
         if (!_hasAudiomanager) return;
         if (jumping && Grounded)
         {
-            AudioManager_Test.instance.PlaySound("Jump");
+            AudioManager_Test.Instance.PlaySound("Jump");
 
         }
     }

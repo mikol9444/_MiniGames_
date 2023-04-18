@@ -19,6 +19,10 @@ public class SceneFader_test : MonoBehaviour
     {
         StartCoroutine(FadeOut(sceneName));
     }
+    public void FadeOutPanel()
+    {
+        StartCoroutine(FadeOut());
+    }
 
     private IEnumerator FadeIn()
     {
@@ -52,5 +56,20 @@ public class SceneFader_test : MonoBehaviour
         }
 
         SceneManager_test.LoadScene(sceneName);
+    }
+    private IEnumerator FadeOut()
+    {
+        fadeImage.gameObject.SetActive(true);
+        Color tempColor = fadeImage.color;
+        tempColor.a = 0f;
+        fadeImage.color = tempColor;
+
+        while (tempColor.a < 1f)
+        {
+            tempColor.a += Time.deltaTime / fadeTime;
+            fadeImage.color = tempColor;
+            yield return null;
+        }
+
     }
 }

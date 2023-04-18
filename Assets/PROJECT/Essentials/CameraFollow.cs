@@ -19,8 +19,11 @@ public class CameraFollow : MonoBehaviour
     public float rotationOffsetX = 0f;
     public float rotationOffsetY = 0f;
     public float rotationOffsetZ = 0f;
-
-
+    private void Awake()
+    {
+        if (!playerTransform) playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        if (!playerTransform) { Debug.LogWarning($"PlayerTransform is not attached to {this.name}"); this.enabled = false; }
+    }
 
     private void LateUpdate()
     {
@@ -62,7 +65,7 @@ public class CameraFollow : MonoBehaviour
 
     private void OnValidate()
     {
-        if (!Application.isPlaying)
+        if (!Application.isPlaying && playerTransform)
         {
             // Update camera position
             transform.position = playerTransform.position + cameraOffset;

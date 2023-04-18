@@ -1,0 +1,11 @@
+using UnityEngine;
+
+
+namespace Minigames._01JumpingJack
+{
+
+public class XXXXXXX : Monobehaviour{
+
+}
+
+}

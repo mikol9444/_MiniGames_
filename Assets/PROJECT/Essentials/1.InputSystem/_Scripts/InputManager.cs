@@ -15,6 +15,7 @@ public class InputManager : MonoBehaviour
     public bool gamePaused = false;
     public bool test = false;
     public bool MoveXOnly = false;
+    public bool enter = false;
     private void Awake()
     {
         Instance = this;
@@ -28,7 +29,8 @@ public class InputManager : MonoBehaviour
         _inputReader.JumpEvent += OnJump;
         _inputReader.SprintEvent += OnSprint;
         _inputReader.PauseEvent += OnPause;
-        _inputReader.TestEvent += OnTest;
+        // _inputReader.TestEvent += OnTest;
+        _inputReader.EnterEvent += OnEnter;
     }
     private void OnApplicationQuit()
     {
@@ -37,7 +39,8 @@ public class InputManager : MonoBehaviour
         _inputReader.JumpEvent -= OnJump;
         _inputReader.SprintEvent -= OnSprint;
         _inputReader.PauseEvent -= OnPause;
-        _inputReader.TestEvent -= OnTest;
+        // _inputReader.TestEvent -= OnTest;
+        _inputReader.EnterEvent -= OnEnter;
     }
     #endregion
 
@@ -45,8 +48,17 @@ public class InputManager : MonoBehaviour
     public void OnMove(Vector2 dir) => move = MoveXOnly ? new Vector2(dir.x, 0) : dir;
     public void OnLook(Vector2 dir) => look = dir;
     public void OnJump(bool state) => jump = state;
-    public void OnSprint(bool newSprintState) => sprint = newSprintState;
+    public void OnSprint(bool state) => sprint = state;
     public void OnPause() => gamePaused = !gamePaused;
-    public void OnTest(bool testing) => test = testing;
+    // public void OnTest(bool state) => test = state;
+    public void OnEnter(bool state) => enter = state;
+
+    public void Deactivate()
+    {
+        foreach (var item in GetComponentsInChildren<Transform>())
+        {
+            item.gameObject.SetActive(false);
+        }
+    }
     #endregion
 }
