@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 7cff21aca8704ba4a9e3e2494072d157
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Squaresharps
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5cdfb92e22a09d7409917f398a5baa0b, type: 3}
+  - {fileID: 12800000, guid: d328f1f3dcad5c549968df101cdc3482, type: 3}
+  - {fileID: 12800000, guid: e292f4a8138672a45b35a3f99c0c4e99, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

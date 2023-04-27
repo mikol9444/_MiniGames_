@@ -20,7 +20,7 @@ namespace Essentials
         [SerializeField] private Image P_Image;
         [SerializeField] private Image G_Image;
         private float deadZone = 0.5f;
-        private bool pPressed = false;
+        private bool pPressed = true;
         private void OnEnable()
         {
             InputManager._MovementEvent += MoveButton;
@@ -36,17 +36,21 @@ namespace Essentials
 
         private void MoveButton(Vector2 dir)
         {
-            D_Image.color = dir.x > deadZone ? pressedColor : Color.white;
-            Right_Image.color = dir.x > deadZone ? pressedColor : Color.white;
+            bool right = dir.x > deadZone;
+            D_Image.color = right ? pressedColor : Color.white;
+            Right_Image.color = right ? pressedColor : Color.white;
 
-            A_Image.color = dir.x < -deadZone ? pressedColor : Color.white;
-            Left_Image.color = dir.x < -deadZone ? pressedColor : Color.white;
+            bool left = dir.x < -deadZone;
+            A_Image.color = left ? pressedColor : Color.white;
+            Left_Image.color = left ? pressedColor : Color.white;
 
-            W_Image.color = dir.y > deadZone ? pressedColor : Color.white;
-            Up_Image.color = dir.y > deadZone ? pressedColor : Color.white;
+            bool up = dir.y > deadZone;
+            W_Image.color = up ? pressedColor : Color.white;
+            Up_Image.color = up ? pressedColor : Color.white;
 
-            S_Image.color = dir.y < -deadZone ? pressedColor : Color.white;
-            Down_Image.color = dir.y < -deadZone ? pressedColor : Color.white;
+            bool down = dir.y < -deadZone;
+            S_Image.color = down ? pressedColor : Color.white;
+            Down_Image.color = down ? pressedColor : Color.white;
 
         }
 
