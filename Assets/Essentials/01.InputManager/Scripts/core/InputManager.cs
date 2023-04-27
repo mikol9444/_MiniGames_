@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace Essentials
 {
-    public class InputReader : MonoBehaviour, ActionMap.IPlayerActions, ActionMap.IUIActions
+    public class InputManager : MonoBehaviour, ActionMap.IPlayerActions, ActionMap.IUIActions
     {
         // PLAYER ACTIONS
         private ActionMap _ActionMap;
@@ -18,6 +18,13 @@ namespace Essentials
         public static event Action _Button1Event;
         public static event Action _Button2Event;
         public static event Action _Button3Event;
+        private void Awake()
+        {
+            _ActionMap = new ActionMap();
+            _ActionMap.Enable();
+            _ActionMap.Player.SetCallbacks(this);
+            _ActionMap.UI.SetCallbacks(this);
+        }
 
         public void OnMove(InputAction.CallbackContext context) => _MovementEvent?.Invoke(context.ReadValue<Vector2>());
         public void OnJump(InputAction.CallbackContext context)
@@ -36,13 +43,6 @@ namespace Essentials
         public void OnButton3(InputAction.CallbackContext context) => _Button3Event?.Invoke();
         public void OnPause(InputAction.CallbackContext context) => _PauseEvent?.Invoke();
 
-        private void Awake()
-        {
-            _ActionMap = new ActionMap();
-            _ActionMap.Enable();
-            _ActionMap.Player.SetCallbacks(this);
-            _ActionMap.UI.SetCallbacks(this);
-        }
 
 
     }

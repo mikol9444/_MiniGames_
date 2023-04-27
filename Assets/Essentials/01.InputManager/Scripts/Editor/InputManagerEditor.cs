@@ -4,14 +4,14 @@ using UnityEditor;
 namespace Essentials
 {
 
-    [CustomEditor(typeof(InputManager))]
+    [CustomEditor(typeof(ExampleInputListener))]
     public class InputManagerEditor : Editor
     {
         private bool showAllFields = true;
 
         public override void OnInspectorGUI()
         {
-            InputManager inputManager = (InputManager)target;
+            ExampleInputListener inputManager = (ExampleInputListener)target;
 
             showAllFields = EditorGUILayout.Foldout(showAllFields, "Input Fields");
 

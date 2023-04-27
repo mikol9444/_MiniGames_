@@ -2,8 +2,7 @@ using UnityEngine;
 
 namespace Essentials
 {
-    [RequireComponent(typeof(InputReader))]
-    public class InputManager : MonoBehaviour
+    public class ExampleInputListener : MonoBehaviour
     {
         public Vector2 movementVector;
         public bool jumping;
@@ -16,26 +15,29 @@ namespace Essentials
 
         private void OnEnable()
         {
-            InputReader._MovementEvent += OnMove;
-            InputReader._JumpEvent += OnJump;
-            InputReader._InteractEvent += OnInteract;
-            InputReader._Button1Event += OnButton1Press;
-            InputReader._Button2Event += OnButton2Press;
-            InputReader._Button3Event += OnButton3Press;
-            InputReader._PauseEvent += OnPausePressed;
-            InputReader._SprintEvent += OnSprint;
+            InputManager._MovementEvent += OnMove;
+            InputManager._JumpEvent += OnJump;
+            InputManager._InteractEvent += OnInteract;
+            InputManager._Button1Event += OnButton1Press;
+            InputManager._Button2Event += OnButton2Press;
+            InputManager._Button3Event += OnButton3Press;
+            InputManager._PauseEvent += OnPausePressed;
+            InputManager._SprintEvent += OnSprint;
         }
         private void OnDisable()
         {
-            InputReader._MovementEvent -= OnMove;
-            InputReader._JumpEvent -= OnJump;
-            InputReader._InteractEvent -= OnInteract;
-            InputReader._Button1Event -= OnButton1Press;
-            InputReader._Button2Event -= OnButton2Press;
-            InputReader._Button3Event -= OnButton3Press;
-            InputReader._PauseEvent -= OnPausePressed;
-            InputReader._SprintEvent -= OnSprint;
+            InputManager._MovementEvent -= OnMove;
+            InputManager._JumpEvent -= OnJump;
+            InputManager._InteractEvent -= OnInteract;
+            InputManager._Button1Event -= OnButton1Press;
+            InputManager._Button2Event -= OnButton2Press;
+            InputManager._Button3Event -= OnButton3Press;
+            InputManager._PauseEvent -= OnPausePressed;
+            InputManager._SprintEvent -= OnSprint;
         }
+
+
+        //RECIEVE INPUTS FORM INPUTREADER -> 
         private void OnMove(Vector2 dir) => movementVector = dir;
         private void OnJump(bool state) => jumping = state;
         private void OnSprint(bool state) => sprinting = state;

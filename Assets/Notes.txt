@@ -1,6 +1,6 @@
 Modules to Implement: 
 - Save/Load System
-- UI Manager 
+- UI Manager  IDEA: Dilate property in Textmesh Component with Lerp -> nice TextAppear effect
 - Time Manager 
 - Physics Manager 
 - Animations Manager

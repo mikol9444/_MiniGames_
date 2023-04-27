@@ -1,0 +1,8 @@
+- Simple Project to generate Color Palettes 
+- Just go to Tools -> Palette Generator 
+Properties: 
+FileName : Save The texture in Path Essentials/Tools/Generated/filename.png
+CellCount : cells Amount : 2,4,8,16,32 possible
+Resolution : texture Resolution
+Color values : H,S,V with min/max
+

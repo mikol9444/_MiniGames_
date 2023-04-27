@@ -1,39 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+public struct TextureStruct
+{
+    public Texture2D texture;
+    public int cellsOnEdgeCount;
+    public float minHue;
+    public float maxHue;
+    public float minSaturation;
+    public float maxSaturation;
+    public float minValue;
+    public float maxValue;
 
+    public TextureStruct(Texture2D texture, int cellsOnEdgeCount, float minHue, float maxHue, float minSaturation, float maxSaturation, float minValue, float maxValue)
+    {
+        this.texture = texture;
+        this.cellsOnEdgeCount = cellsOnEdgeCount;
+        this.minHue = minHue;
+        this.maxHue = maxHue;
+        this.minSaturation = minSaturation;
+        this.maxSaturation = maxSaturation;
+        this.minValue = minValue;
+        this.maxValue = maxValue;
+    }
+}
 public static class TextureCreator
 {
-    public static Texture2D CreateEmpty(int resolution)
-    {
-        Texture2D texture = new Texture2D(resolution, resolution);
-        Color[] pixels = new Color[resolution * resolution]; // create a new array of colors
 
-        for (int i = 0; i < pixels.Length; i++) pixels[i] = Color.black;
-        texture.SetPixels(pixels); // set the pixel data of the texture to the color array
-        texture.Apply(); // apply the changes to the texture
-        return texture;
-    }
-    public static Texture2D CreateColorPalette(Texture2D texture, int cellsOnEdgeCount, float minHue, float maxHue, float minSaturation, float maxSaturation, float minValue, float maxValue)
+    public static Texture2D GenerateColorPalette(TextureStruct txtStruct)
     {
-        int cellAmount = cellsOnEdgeCount * cellsOnEdgeCount;
-        int cellSize = texture.width / cellsOnEdgeCount;
+        int cellAmount = txtStruct.cellsOnEdgeCount * txtStruct.cellsOnEdgeCount;
+        int cellSize = txtStruct.texture.width / txtStruct.cellsOnEdgeCount;
         Debug.Log($"Cells Amount = {cellAmount}");
         Color[] colors = new Color[cellAmount];
         for (int i = 0; i < colors.Length; i++)
         {
-            colors[i] = Random.ColorHSV(minHue, maxHue, minSaturation, maxSaturation, minValue, maxValue);
+            colors[i] = Random.ColorHSV(txtStruct.minHue, txtStruct.maxHue, txtStruct.minSaturation, txtStruct.maxSaturation, txtStruct.minValue, txtStruct.maxValue);
         }
-        for (int i = 0, k = 0; i < cellsOnEdgeCount; i++)
+        for (int i = 0, k = 0; i < txtStruct.cellsOnEdgeCount; i++)
         {
-            for (int j = 0; j < cellsOnEdgeCount; j++, k++)
+            for (int j = 0; j < txtStruct.cellsOnEdgeCount; j++, k++)
             {
                 int startX = i * cellSize;
                 int startY = j * cellSize;
-                FillArea(texture, colors[k], startX, startY, startX + cellSize, startY + cellSize);
+                FillArea(txtStruct.texture, colors[k], startX, startY, startX + cellSize, startY + cellSize);
             }
         }
-        return texture;
+        return txtStruct.texture;
     }
 
     public static Texture2D FillArea(Texture2D texture, Color color, int startX, int startY, int endX, int endY)

@@ -15,8 +15,11 @@ public class TextureCreatorEditor : EditorWindow
     private float maxSaturation = 1f;
     private float minValue = 0.5f;
     private float maxValue = 1f;
-    private bool autoUpdate = true;
+    private bool autoUpdate = false;
     private Texture2D previewTexture;
+
+    public TextureStruct textureStruct;
+
     [MenuItem("Tools/Palette Generator")]
     public static void ShowWindow()
     {
@@ -41,9 +44,11 @@ public class TextureCreatorEditor : EditorWindow
     }
     private void OnGUI()
     {
+        CheckValue();
         // Define custom styles for the sliders
         GUIStyle sliderStyle = new GUIStyle(GUI.skin.horizontalSlider);
         sliderStyle.fixedHeight = 10f;
+        sliderStyle.fixedWidth = 200f;
         sliderStyle.normal.textColor = new Color(0.2f, 0.2f, 0.2f, 1f);
         sliderStyle.alignment = TextAnchor.MiddleCenter;
         GUIStyle thumbStyle = new GUIStyle(GUI.skin.horizontalSliderThumb);
@@ -70,9 +75,6 @@ public class TextureCreatorEditor : EditorWindow
         GUIStyle labelStyle = CreateLabelStyle(13, new Color(0f, 1f, 0.5f, 1f), TextAnchor.MiddleLeft, FontStyle.Bold);
         labelStyle.fixedWidth = 150f;
 
-
-
-
         GUILayout.Label("Palette Generator", titleStyle);
         GUILayout.Space(20);
 
@@ -81,18 +83,6 @@ public class TextureCreatorEditor : EditorWindow
         resolution = EditorGUILayout.IntSlider(new GUIContent("Resolution", "The resolution of the output texture"), resolution, 1, 1024);
 
         cellCount = EditorGUILayout.IntSlider(new GUIContent("CellCount", "The number of cells in the output texture"), cellCount, 1, 32);
-
-
-        // GUILayout.BeginHorizontal();
-        // GUILayout.Label("Resolution: " + resolution.ToString(), labelStyle);
-        // resolution = (int)(GUILayout.HorizontalSlider(8f, 1f, 1024f, sliderStyle, thumbStyle));
-        // GUILayout.EndHorizontal();
-
-        // GUILayout.BeginHorizontal();
-        // GUILayout.Label("cellCount: " + cellCount.ToString(), labelStyle);
-        // cellCount = (int)(GUILayout.HorizontalSlider(4, 1, 32, sliderStyle, thumbStyle));
-        // GUILayout.EndHorizontal();
-
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("Min Hue: " + minHue.ToString("F2"), labelStyle);
@@ -134,14 +124,14 @@ public class TextureCreatorEditor : EditorWindow
         }
 
         GUILayout.EndHorizontal();
-        if (GUILayout.Button("Generate Texture"))
+        if (GUILayout.Button("Generate Palette"))
         {
-            Generate();
+            GeneratePalette();
         }
 
-        if (GUILayout.Button("Save Texture"))
+        if (GUILayout.Button("Save Palette"))
         {
-            string directory = EditorUtility.SaveFolderPanel("Save Texture", "Assets/Essentials/Tools/Generated", "");
+            string directory = EditorUtility.SaveFolderPanel("Save Palette", "Assets/Essentials/Tools/Generated", "");
             if (!string.IsNullOrEmpty(directory))
             {
                 string filePath = directory + "/" + fileName;
@@ -160,23 +150,24 @@ public class TextureCreatorEditor : EditorWindow
             previewRect.x += (position.width - previewRect.width) / 2f;
             GUI.DrawTexture(previewRect, previewTexture, ScaleMode.ScaleToFit);
         }
-        resolution = Mathf.ClosestPowerOfTwo(resolution);
-        cellCount = Mathf.ClosestPowerOfTwo(cellCount);
+
         if (GUI.changed && autoUpdate)
         {
-            Generate();
+            GeneratePalette();
         }
-        CheckValue();
+
 
     }
-    private void Generate()
+    private void GeneratePalette()
     {
-        if (previewTexture != null)
-        {
-            previewTexture = TextureCreator.CreateEmpty(resolution);
-            previewTexture = TextureCreator.CreateColorPalette(previewTexture, cellCount, minHue, maxHue, minSaturation, maxSaturation, minValue, maxValue);
-        }
+        previewTexture = new Texture2D(resolution, resolution);
+        textureStruct = new TextureStruct(previewTexture, cellCount, minHue, maxHue, minSaturation, maxSaturation, minValue, maxValue);
+        previewTexture = TextureCreator.GenerateColorPalette(textureStruct);
     }
+
+
+
+
     private void SaveTextureAsPNG(Texture2D texture, string filePath)
     {
         byte[] bytes = texture.EncodeToPNG();
@@ -185,10 +176,14 @@ public class TextureCreatorEditor : EditorWindow
         AssetDatabase.Refresh();
         Debug.Log("Saved texture to " + filePath);
     }
+
     private void CheckValue()
     {
+        resolution = Mathf.ClosestPowerOfTwo(resolution);
+        cellCount = Mathf.ClosestPowerOfTwo(cellCount);
         if (minHue > maxHue) minHue = maxHue;
         if (minSaturation > maxSaturation) minSaturation = maxSaturation;
         if (minValue > maxValue) minValue = maxValue;
+        // 
     }
 }
