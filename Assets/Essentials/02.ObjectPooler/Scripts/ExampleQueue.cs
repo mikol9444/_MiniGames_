@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QueueExample : MonoBehaviour
+public class ExampleQueue : MonoBehaviour
 {
     private Queue<GameObject> objectQueue = new Queue<GameObject>();
     public GameObject prefab;

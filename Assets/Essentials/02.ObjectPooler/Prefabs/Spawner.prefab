@@ -46,11 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9d5d6e77930bb4c93aa0f7274af2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1634251072222431365, guid: 0593004e2c1f1124b902b839bde5f87c, type: 3}
   particlesPerSecond: 3
-  radius: 2
-  speed: 2
-  spiralFactor: 0.5
+  objectToSpawnName: Particle
 --- !u!33 &7492072075039009000
 MeshFilter:
   m_ObjectHideFlags: 0

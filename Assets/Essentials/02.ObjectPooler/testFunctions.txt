@@ -1,0 +1,42 @@
+    
+    
+    // Some experiments with trigonometric functions
+    private void Update()
+    {
+        transform.position = RocketMovement() + offset;
+
+    }
+    private Vector3 RocketMovement()
+    {
+        float angle = Time.time * speed;
+        float x = Mathf.Sin(angle) * radius;
+        float z = Mathf.Cos(angle) * radius;
+        return new Vector3(x, 0, z);
+    }
+    private Vector3 SprialMovement()
+    {
+        float angle = Time.time * speed;
+        float x = Mathf.Cos(angle) * (radius + angle * spiralFactor);
+        float y = Mathf.Sin(angle) * (radius + angle * spiralFactor);
+        float z = Mathf.Sin(angle) * (radius + angle * spiralFactor);
+        return new Vector3(x, y, z);
+    }
+    private Vector3 EightMovement()
+    {
+        float angle = Time.time * speed;
+        float x = Mathf.Sin(angle) * radius;
+        float y = Mathf.Cos(angle * 2) * radius;
+        float z = Mathf.Sin(angle * 3) * radius;
+        return new Vector3(x, y, z);
+    }
+
+    -------------------------------------------
+        private void PingPongMoveTo()
+    {
+        if (moved)
+            smoothPosition.StartMoveTo(transform, transform.position + moveByVector, repeatRate);
+        else
+            smoothPosition.StartMoveTo(transform, transform.position - moveByVector, repeatRate);
+
+        moved = !moved;
+    }

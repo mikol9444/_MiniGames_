@@ -6,3 +6,6 @@ CellCount : cells Amount : 2,4,8,16,32 possible
 Resolution : texture Resolution
 Color values : H,S,V with min/max
 
+
+
+ExampleAnimator is mess, creating a nice looking interface with unityeditor scripts would be great 
