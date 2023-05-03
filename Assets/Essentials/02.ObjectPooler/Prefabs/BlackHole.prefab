@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 7522206168867115321}
   - component: {fileID: 1125074708218518267}
   - component: {fileID: 1125074708218518264}
-  - component: {fileID: 7522206168215849135}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: BlackHole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 1125074708218518270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5, y: 21.55, z: -58}
-  m_LocalScale: {x: 5, y: 5, z: 5}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -42,13 +41,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125074708218518270}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf9d5d6e77930bb4c93aa0f7274af2d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particlesPerSecond: 0.5
-  objectToSpawnName: Particle
+  particlesPerSecond: 55
+  objectToSpawnName: BlackHole
 --- !u!33 &1125074708218518267
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -99,25 +98,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7522206168215849135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125074708218518270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5da17e2c4f1cd324bbef0380906a1b91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  smoothPosition: {fileID: 0}
-  repeatRate: 1
-  movementType: 0
-  circleRadius: 5
-  spiralFactor: 1
-  moveSpeed: 1
-  duration: 5
-  moveByVector: {x: 0, y: 15, z: 0}
-  moveOnStart: 1
-  endlessMove: 1

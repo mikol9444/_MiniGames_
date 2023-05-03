@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Essentials;
 using UnityEngine;
+using TMPro;
 
 public class ExampleSpawnerScript : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class ExampleSpawnerScript : MonoBehaviour
     {
         offset = transform.position;
         StartCoroutine(ShootParticles());
+
     }
 
     private IEnumerator ShootParticles()
@@ -29,7 +31,7 @@ public class ExampleSpawnerScript : MonoBehaviour
                 yield return new WaitForSeconds(cooldown);
                 continue;
             }
-            obj.transform.position = transform.position + Vector3.up;
+            obj.transform.position = transform.position;
             yield return new WaitForSeconds(waitTime);
             waitTime = 1f / particlesPerSecond;
         }

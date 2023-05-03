@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ExampleParticle : MonoBehaviour
 {
+    public string poolName = "BlackHole";
     // Start is called before the first frame update
     public float RecycleTimer = 3f;
     public float minPoint = .05f;
@@ -13,7 +14,7 @@ public class ExampleParticle : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+           rb = GetComponent<Rigidbody>();
     }
     void OnEnable()
     {
@@ -37,6 +38,6 @@ public class ExampleParticle : MonoBehaviour
     }
     private void ReturnToPool()
     {
-        ObjectPooler.Instance.ReturnObjectToPool("Particle", gameObject);
+        ObjectPooler.Instance.ReturnObjectToPool(poolName, gameObject);
     }
 }

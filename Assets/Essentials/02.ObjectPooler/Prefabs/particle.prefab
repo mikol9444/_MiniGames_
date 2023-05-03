@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7492072075039009003}
   - component: {fileID: 1633035543866291115}
   - component: {fileID: 6594003620302942535}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,9 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42d3d0f731ca2eb42a076d198541adf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RecycleTimer: 10
-  minPoint: 1
-  maxPoint: 5
+  poolName: Particle
+  RecycleTimer: 5
+  minPoint: 0.5
+  maxPoint: 0.7
 --- !u!33 &7492072075039009000
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -109,9 +110,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7492072075039009005}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0.25
-  m_AngularDrag: 0.05
+  m_Mass: 5
+  m_Drag: 0
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
