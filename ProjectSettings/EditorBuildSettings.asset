@@ -6,32 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/PROJECT/Games/MainMenu.unity
-    guid: 7f1d691ba9dd9b6488360b965abbfec7
-  - enabled: 1
-    path: Assets/PROJECT/Games/01JumpingJack/Scenes/00JumpingJack.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/PROJECT/Games/01JumpingJack/Scenes/01Jack.unity
-    guid: d0803515e42eea14b85b791e3875e488
-  - enabled: 1
-    path: Assets/PROJECT/Games/01JumpingJack/Scenes/02Jack.unity
-    guid: c4901a4b4420a664fbe8ad3007c06ef4
-  - enabled: 1
-    path: Assets/PROJECT/Games/01JumpingJack/Scenes/03Jack.unity
-    guid: 8733e507b2581c24890161579b084f4a
-  - enabled: 1
-    path: Assets/PROJECT/Games/01JumpingJack/Scenes/04Jack.unity
-    guid: 09bf10d71c1ec0142b61dbd19d354bf2
-  - enabled: 1
-    path: Assets/PROJECT/Games/01JumpingJack/Scenes/05Jack.unity
-    guid: c7c13ab8153acd54fa42d5a0958c0979
-  - enabled: 1
-    path: Assets/PROJECT/Games/02ScreenTapper/00ScreenTapper.unity
-    guid: 2cc9ada725738a843ae42161cc2bd115
-  - enabled: 1
-    path: Assets/PROJECT/Games/02ScreenTapper/ScreenTapper.unity
-    guid: 8336a4b5c8d6af2438547e5d21817545
+    path: Assets/Essentials/Core/02.ObjectPooler/demo.unity
+    guid: 68f89cf7967ed624287be2cce151a900
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3d55655c6818e3f49a91bbf0e4f0eb87, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: c91e83e8e01af214998ec14c749a041d, type: 2}
