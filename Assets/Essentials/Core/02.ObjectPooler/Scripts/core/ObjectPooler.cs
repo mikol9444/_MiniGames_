@@ -28,7 +28,7 @@ namespace Essentials
         //Singleton
         private void Awake()
         {
-            if (Instance != this) Destroy(gameObject);
+            if (Instance != null) Destroy(gameObject);
             Instance = this;
 
             InitializePools(particles);
@@ -62,6 +62,21 @@ namespace Essentials
             {
                 Debug.LogWarning("Pool with name " + poolName + " does not exist.");
                 return;
+            }
+
+            poolDictionary[poolName].ReturnObject(obj);
+        }
+        public void ReturnObjectToPool(string poolName, GameObject obj,float time)
+        {
+            StartCoroutine(ReturnObjectAfterTime(poolName, obj, time));
+        }
+        private IEnumerator ReturnObjectAfterTime(string poolName, GameObject obj, float time)
+        {
+            yield return new WaitForSeconds(time);
+            if (!poolDictionary.ContainsKey(poolName))
+            {
+                Debug.LogWarning("Pool with name " + poolName + " does not exist.");
+                yield return null;
             }
 
             poolDictionary[poolName].ReturnObject(obj);

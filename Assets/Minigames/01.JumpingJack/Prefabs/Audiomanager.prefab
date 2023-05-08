@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7512543269191902931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7512543269191902929}
+  - component: {fileID: 7512543269191902928}
+  m_Layer: 0
+  m_Name: Audiomanager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7512543269191902929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7512543269191902931}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1135, y: 1055, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7512543269191902928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7512543269191902931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c05b9b395f1b34195920448ccc38c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioFiles:
+  - NAME: default
+    audioClip: {fileID: 8300000, guid: 9b3625ece2e0a43488f10275296d2e51, type: 3}
+    audioSource: {fileID: 0}
+    pitch: 1
+    volume: 1
+    isRunning: 0
+    loop: 1
+    playOnStart: 1
+  - NAME: jetpack
+    audioClip: {fileID: 8300000, guid: 137d63ea692a1e54fbaace15e9938537, type: 3}
+    audioSource: {fileID: 0}
+    pitch: 1
+    volume: 1
+    isRunning: 0
+    loop: 1
+    playOnStart: 0
+  - NAME: dead
+    audioClip: {fileID: 8300000, guid: e87c2b532ca9b254cb97d96d4206eb2a, type: 3}
+    audioSource: {fileID: 0}
+    pitch: 1
+    volume: 1
+    isRunning: 0
+    loop: 0
+    playOnStart: 0
+  - NAME: win
+    audioClip: {fileID: 8300000, guid: 1991b7455c7093440992814df7cc7398, type: 3}
+    audioSource: {fileID: 0}
+    pitch: 1
+    volume: 1
+    isRunning: 0
+    loop: 0
+    playOnStart: 0
+  - NAME: item
+    audioClip: {fileID: 8300000, guid: 211625c844d10ad4a818b79ef0e5b0dd, type: 3}
+    audioSource: {fileID: 0}
+    pitch: 1
+    volume: 1
+    isRunning: 0
+    loop: 0
+    playOnStart: 0

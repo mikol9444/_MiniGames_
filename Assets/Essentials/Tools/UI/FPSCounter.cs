@@ -20,7 +20,7 @@ public class FPSCounter : MonoBehaviour
         fpsCurrent = fpsAccumulator / fpsFrames;
         fpsAccumulator = 0f;
         fpsFrames = 0;
-        fpsText.text = "FPS: " + Mathf.RoundToInt(fpsCurrent).ToString();
+        fpsText.text = Mathf.RoundToInt(fpsCurrent).ToString();
     }
 
     private void Update()

@@ -7,6 +7,10 @@ TagManager:
   - Wall
   - Goal
   - Interactable
+  - Ground
+  - Enemy
+  - Start
+  - Popup
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private Vector2 xBounds = new Vector3(-25f, 25f);
     [SerializeField] private Vector2 yBounds = new Vector3(-25f, 25f);
     [SerializeField] private Vector2 zBounds = new Vector3(-25f, 25f);
-
+    [SerializeField] private float followSpeed = 5f;
     public Vector3 cameraOffset = new Vector3(0f, 5f, -5f);
     public Vector3 boundsOffset;
     public Color gizmoColor = new Color(0.13f, .78f, .67f, .52f);
@@ -34,7 +34,7 @@ public class CameraFollow : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         if (lookAtPlayer)
         {
@@ -56,10 +56,8 @@ public class CameraFollow : MonoBehaviour
         float clampedZ = Mathf.Clamp(desiredPosition.z, zBounds.x + boundsOffset.z, zBounds.y + boundsOffset.z);
         desiredPosition = new Vector3(clampedX, clampedY, clampedZ);
 
-        // Set the position of the camera to the desired position
-        transform.position = desiredPosition;
-
-        // Look at the player if necessary
+        // Smoothly move the camera towards the desired position using Lerp
+        transform.position = Vector3.Lerp(transform.position, desiredPosition, followSpeed * Time.deltaTime);
 
 
     }

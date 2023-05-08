@@ -4,38 +4,20 @@ using UnityEngine;
 
 public class PopUpManager : MonoBehaviour
 {
-    public static PopUpManager Instance;
-    public Popup[] popups;
-    public string popupText = "I SET THIS TEXT OMG";
+
+    public Popup popup;
     private void Awake()
     {
-        if (Instance != null) Destroy(gameObject);
-        Instance = this;
 
-        popups = Resources.FindObjectsOfTypeAll<Popup>();
-        if (popups.Length==0)
-        {
+        if (!popup) { 
             Debug.LogWarning("No Popups in the Scene");
             Debug.LogWarning("PopUpManager disabled now -.-");
             gameObject.SetActive(false);
         }
 
     }
-    public void ActivateTextPopup(string note = "")
+    public void TogglePopup(string note)
     {
-        Popup p = popups[0];
-
-        if (note == "")
-        {
-            p.SetText(popupText);
-        }
-        else p.SetText(note);
-
-        if (p.isActiveAndEnabled)
-        {
-            p.OnDeactivate();
-        }
-        else p.OnActivate();
-
+        popup.OnActivate(note);
     }
 }

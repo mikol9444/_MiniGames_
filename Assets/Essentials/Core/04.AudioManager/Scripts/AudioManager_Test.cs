@@ -46,7 +46,6 @@ public class AudioManager_Test : MonoBehaviour
                 PlaySound(item.NAME);
             }
         }
-        DontDestroyOnLoad(this);
     }
 
     public void PlaySound(string name)

@@ -12,6 +12,7 @@ namespace Essentials
         public static event Action<bool> _JumpEvent;
         public static event Action<bool> _SprintEvent;
         public static event Action _InteractEvent;
+        public static event Action<bool> _CrouchEvent;
 
         //UI ACTIONS
         public static event Action _PauseEvent;
@@ -43,7 +44,16 @@ namespace Essentials
         public void OnButton3(InputAction.CallbackContext context) => _Button3Event?.Invoke();
         public void OnPause(InputAction.CallbackContext context) => _PauseEvent?.Invoke();
 
-
-
+        public void OnCrouch(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _CrouchEvent?.Invoke(true);
+            }
+            else if (context.canceled)
+            {
+                _CrouchEvent?.Invoke(false);
+            }
+        }
     }
 }

@@ -18,9 +18,10 @@ public class Popup : MonoBehaviour
         txt.text = welcomeText;
     }
     public void SetActiveFalse() => gameObject.SetActive(false);
-    public void OnActivate()
+    public void OnActivate(string context=default)
     {
         gameObject.SetActive(true);
+        txt.text = context;
         anim.clip = popupClip;
         anim.Play();
     }

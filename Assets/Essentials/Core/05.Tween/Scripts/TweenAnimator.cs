@@ -10,7 +10,7 @@ public class TweenAnimator : MonoBehaviour
     public bool pingPongActive = false;
     public bool pingAndPong = false;
     [SerializeField] [Range(0.1f, 50f)] private float movementSpeed = 1.5f;
-    [SerializeField] [Range(0.1f, 25f)] private float timeTillDestination = 1.5f;
+    [SerializeField] [Range(0.1f, 25f)] protected float timeTillDestination = 1.5f;
     [SerializeField] private Vector3 destination = Vector3.up;
     [SerializeField] private Vector3 startPosition = Vector3.up;
     [SerializeField] float circleRadius = 1.5f;
@@ -18,8 +18,8 @@ public class TweenAnimator : MonoBehaviour
     [SerializeField] private float spiralRadius = 2f;
     [SerializeField] private int spiralFrequency = 2;
 
-    private Action onStart;
-    private Action onComplete;
+    protected Action onStart;
+    protected Action onComplete;
     private bool routineInProgress;
 
 
@@ -47,7 +47,7 @@ public class TweenAnimator : MonoBehaviour
         startPosition = transform.position;
         StartMovement();
     }
-
+    public void SetDestination(Vector3 dest) => destination = dest;
     public void StartMovement()
     {
         if (routineInProgress)
@@ -77,7 +77,7 @@ public class TweenAnimator : MonoBehaviour
         StopAllCoroutines();
         onComplete();
     }
-    public void PingPong() => pingPongActive = !pingPongActive;
+    public virtual void PingPong() => pingPongActive = !pingPongActive;
     private IEnumerator MoveToRoutine()
     {
         Vector3 a = transform.position;
@@ -93,7 +93,7 @@ public class TweenAnimator : MonoBehaviour
         onComplete();
     }
 
-    private IEnumerator MoveByRoutine()
+    protected virtual IEnumerator MoveByRoutine()
     {
         Vector3 a = transform.position;
         Vector3 b = pingAndPong ? startPosition : transform.position + destination;
