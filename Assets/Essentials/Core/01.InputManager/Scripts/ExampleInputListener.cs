@@ -1,5 +1,4 @@
 using UnityEngine;
-
 namespace Essentials
 {
     public class ExampleInputListener : MonoBehaviour
