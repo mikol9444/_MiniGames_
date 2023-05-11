@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _03_Waypoints : MonoBehaviour
+public class _03Waypoints : MonoBehaviour
 {
     [SerializeField] private bool showGizmos = true;
     [SerializeField] private GameObject portalPrefab;
     private Transform[] childTransforms;
+    private LineRenderer lineRend;
     public int ChildLength { get => childTransforms.Length; }
     private void Awake()
     {
         GetAllChildren();
+        lineRend = GetComponent<LineRenderer>();
     }
     private void Start()
     {
@@ -56,13 +58,23 @@ public class _03_Waypoints : MonoBehaviour
     }
     private void GetAllChildren()
     {
-                    // Get the transforms of all child GameObjects
-            int childCount = transform.childCount;
-            childTransforms = new Transform[childCount];
+        int childCount = transform.childCount;
+        // Get the transforms of all child GameObjects
+        childTransforms = new Transform[childCount];
+        for (int i = 0; i < childCount; i++)
+        {
+            childTransforms[i] = transform.GetChild(i);
+        }
+        //Set Up Line Renderer positions 
+        if (gameObject.TryGetComponent(out lineRend))
+        {
+            lineRend.positionCount = childCount;
             for (int i = 0; i < childCount; i++)
             {
-                childTransforms[i] = transform.GetChild(i);
+                lineRend.SetPosition(i, childTransforms[i].position);
             }
+        }
+
     }
 
 

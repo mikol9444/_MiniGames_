@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Essentials/Core/03.SceneManager/scenemanager01.unity
-    guid: a7a92e90a30273b42aae6fec4dac9b73
-  - enabled: 1
-    path: Assets/Essentials/Core/03.SceneManager/scenemanager02.unity
-    guid: c9c8954d3cbd58c488eef5170491a71e
-  - enabled: 1
     path: Assets/Minigames/startmenu.unity
     guid: b6fdac59483e2ff498333fd7de9a237f
   - enabled: 1
@@ -71,6 +65,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Minigames/03.TowerDefence/03_startScene.unity
     guid: 7a333ef82826a374cae10a754e4f667a
+  - enabled: 1
+    path: Assets/Essentials/Core/03.SceneManager/scenemanager01.unity
+    guid: a7a92e90a30273b42aae6fec4dac9b73
+  - enabled: 1
+    path: Assets/Essentials/Core/03.SceneManager/scenemanager02.unity
+    guid: c9c8954d3cbd58c488eef5170491a71e
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3d55655c6818e3f49a91bbf0e4f0eb87, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: c91e83e8e01af214998ec14c749a041d, type: 2}

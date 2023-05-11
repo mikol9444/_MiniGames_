@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _03_WaypointsFollower : MonoBehaviour
+public class _03WaypointsFollower : MonoBehaviour
 {
     [SerializeField] private Color sphereColor = Color.cyan;
     [SerializeField] private float sphereRadius = 1.5f;
@@ -10,12 +10,12 @@ public class _03_WaypointsFollower : MonoBehaviour
     [SerializeField] private int currentWaypointIndex = 0;
     [SerializeField] private bool drawGizmo;
 
-    private _03_Waypoints waypointsScript;
+    private _03Waypoints waypointsScript;
     private Transform targetTransform;
 
     private void Start()
     {
-        waypointsScript = FindObjectOfType<_03_Waypoints>();
+        waypointsScript = FindObjectOfType<_03Waypoints>();
         if (!waypointsScript)
         {
             Debug.LogWarning($"Waypoints not found in {gameObject.name}, going to sleep now -.-");

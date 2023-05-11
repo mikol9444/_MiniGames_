@@ -11,9 +11,11 @@ public class _03TowerScript : MonoBehaviour
     public LayerMask enemyMask;
     public float startDamage = 5f;
     public float startRange = 10f;
-    public float startFireRate = 1f;
+    public float scanInterval = 0.5f;
     public int startCost = 10;
     public bool isInitialized = false;
+    protected Transform target;
+    [SerializeField] protected Transform shootingPoint;
 
     protected Animator anim;
     // Add a method to upgrade the tower
@@ -21,6 +23,7 @@ public class _03TowerScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
     }
+
     protected virtual void OnEnable()
     {
         if (!isInitialized)
@@ -54,9 +57,9 @@ public class _03TowerScript : MonoBehaviour
         //    }
         //}
     }
-    protected virtual void Kaputt()
-    {
-        anim.SetTrigger("kaputt");
-    }
+    //protected virtual void Kaputt()
+    //{
+    //    anim.SetTrigger("kaputt");
+    //}
 
 }
