@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4275109, g: 0.6614984, b: 0.7674234, a: 1}
+  m_IndirectSpecularColor: {r: 0.59082043, g: 0.66184765, b: 0.6789231, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4790,6 +4790,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1014935200464675709, guid: 806671597b007364ebf994a7fbffb9f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014935200464675709, guid: 806671597b007364ebf994a7fbffb9f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014935200464675709, guid: 806671597b007364ebf994a7fbffb9f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2140809837}
+    - target: {fileID: 1014935200464675709, guid: 806671597b007364ebf994a7fbffb9f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014935200464675709, guid: 806671597b007364ebf994a7fbffb9f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: UnlockLevels
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014935200464675709, guid: 806671597b007364ebf994a7fbffb9f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: _01EasySaveData, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014935200464675709, guid: 806671597b007364ebf994a7fbffb9f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014935200464675709, guid: 806671597b007364ebf994a7fbffb9f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1673210390393650972, guid: 806671597b007364ebf994a7fbffb9f4, type: 3}
       propertyPath: sceneName
       value: 01_level13
@@ -5081,6 +5113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathCounter: 0
+  currentLevel: 0
 --- !u!4 &1735515211
 Transform:
   m_ObjectHideFlags: 0
@@ -5857,6 +5890,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2386609478657484640, guid: 60b53d510421318479959095b788a46b, type: 3}
   m_PrefabInstance: {fileID: 391851287}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2140809836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2140809838}
+  - component: {fileID: 2140809837}
+  m_Layer: 0
+  m_Name: save
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2140809837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140809836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38ac3f79056025d4e8a2e2022e3972b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    intValue: 0
+--- !u!4 &2140809838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140809836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2142492799
 PrefabInstance:
   m_ObjectHideFlags: 0

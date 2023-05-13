@@ -15,7 +15,7 @@ namespace Essentials
 
         public virtual void Initialize()
         {
-            GameObject parent = new GameObject("Pool Parent");
+            GameObject parent = new GameObject( $"POOL: {name}");
             for (int i = 0; i < poolSize; i++)
             {
                 GameObject obj = UnityEngine.Object.Instantiate(prefab, parent.transform);

@@ -14,11 +14,13 @@ public class SceneMan : MonoBehaviour
         if (Instance != null) Destroy(gameObject);
         Instance = this;
         buildIndex = SceneManager.GetActiveScene().buildIndex;
+        
     }
+
     private void Start()
     {
-        anim = GetComponentInChildren<Animator>();
-       if(faderPanel) faderPanel.gameObject?.SetActive(true);
+
+       
         OnStart();
     }
     public void ReloadScene() => SceneManager.LoadScene(buildIndex);
@@ -32,7 +34,14 @@ public class SceneMan : MonoBehaviour
 
     public void SetSceneName(string nameofTheScene) => sceneName = nameofTheScene;
     public void SwitchScene() => SceneManager.LoadScene(sceneName);
-    private void OnStart() => anim.SetTrigger("start");
+    private void OnStart()
+    {
+        if (!faderPanel) { Debug.LogWarning("Faderpanel not set");return; }
+        faderPanel.gameObject?.SetActive(true);
+        anim = GetComponentInChildren<Animator>();
+        anim.SetTrigger("start");
+    }
     public  void OnEndScene() => anim.SetTrigger("end");
     public void StartReloadScene() => anim.SetTrigger("reload");
+    public void ReturnToMenu() => LoadScene("startmenu");
 }

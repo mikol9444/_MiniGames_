@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4275109, g: 0.6614984, b: 0.7674234, a: 1}
+  m_IndirectSpecularColor: {r: 0.59082043, g: 0.66184765, b: 0.6789231, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5229,6 +5229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathCounter: 0
+  currentLevel: 0
 --- !u!4 &1735515211
 Transform:
   m_ObjectHideFlags: 0
@@ -6498,6 +6499,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4216549174491296449, guid: 8943f81c6d0e80d41b3b1b8f8ac90c31, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 01_startMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 5225196800449207200, guid: 8943f81c6d0e80d41b3b1b8f8ac90c31, type: 3}
       propertyPath: sceneName
       value: 01_startMenu

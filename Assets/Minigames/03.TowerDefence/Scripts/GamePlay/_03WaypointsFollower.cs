@@ -7,6 +7,7 @@ public class _03WaypointsFollower : MonoBehaviour
     [SerializeField] private Color sphereColor = Color.cyan;
     [SerializeField] private float sphereRadius = 1.5f;
     [SerializeField] private float movementSpeed = 1.5f;
+    [SerializeField] private float distanceThreshold = 0.25f;
     [SerializeField] private int currentWaypointIndex = 0;
     [SerializeField] private bool drawGizmo;
 
@@ -39,7 +40,7 @@ public class _03WaypointsFollower : MonoBehaviour
             // Move towards the current waypoint
             Vector3 targetPosition = waypointsScript.GetCurrentWaypoint(currentWaypointIndex);
             float distance = Vector3.Distance(transform.position, targetPosition);
-            if (distance > 0.1f)
+            if (distance > distanceThreshold)
             {
                 Vector3 direction = (targetPosition - transform.position).normalized;
                 transform.position += direction * movementSpeed * Time.deltaTime;

@@ -1,12 +1,14 @@
 using UnityEngine;
 using System;
 using Essentials;
+using UnityEngine.Events;
 public class _01EvaCollisionHandler : MonoBehaviour
 {
     _01EvaMovementController controller;
     ColorBlinker blinker;
     private bool isWon = default;
-    public static Action deadAction; 
+    public static Action deadAction;
+    public UnityEvent onLevelEnd;
     private void Awake()
     {
         controller = GetComponent<_01EvaMovementController>();
@@ -38,6 +40,7 @@ public class _01EvaCollisionHandler : MonoBehaviour
             _01EvaGameMaster.Instance.OnButton1Pressed(); // Should Invoke the Popup
             AudioManager_Test.Instance.PlaySound("win");
             AudioManager_Test.Instance.StopSound("jetpack");
+            onLevelEnd?.Invoke();
             Destroy(controller);
         }
     }

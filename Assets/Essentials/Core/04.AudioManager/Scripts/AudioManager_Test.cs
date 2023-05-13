@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -46,6 +47,12 @@ public class AudioManager_Test : MonoBehaviour
                 PlaySound(item.NAME);
             }
         }
+    }
+    public void PlayRandomSound()
+    {
+        int randomIndex = Random.Range(0, audioFiles.Length);
+        string audioName = audioFiles[randomIndex].NAME;
+        PlaySound(audioName);
     }
 
     public void PlaySound(string name)

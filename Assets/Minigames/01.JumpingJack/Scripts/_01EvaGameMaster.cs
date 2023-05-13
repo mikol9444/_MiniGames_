@@ -11,6 +11,7 @@ public class _01EvaGameMaster : MonoBehaviour
     private Transform startPositionTransform;
     private Popup popup;
     public int deathCounter = 0;
+    public int currentLevel = 0;
     private void Awake()
     {
         deathCounter = 0;

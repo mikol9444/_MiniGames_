@@ -25,7 +25,7 @@ public class CameraFollow : MonoBehaviour
         if (!player)
         {
             Debug.LogWarning($"PlayerTransform is not attached to {this.name} - creating Pivot point");
-            GameObject obj = new GameObject("Pivot");
+            GameObject obj = new GameObject("...CameraPivot...");
             playerTransform = obj.transform;
         }
         else

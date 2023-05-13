@@ -2,9 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Essentials;
-public class _03Projectile : MonoBehaviour
+public interface _03_IDamager
 {
-    public float lifeTime = 3f;
+    public float DamageAmount { get; set; }
+}
+
+public class _03Projectile : MonoBehaviour,_03_IDamager
+{
+    [SerializeField] private float lifeTime = 3f;
+    [SerializeField] private float damageAmount = 15f;
+    public float DamageAmount { get => damageAmount; set => damageAmount=value; }
+
     private void OnEnable()
     {
         Invoke(nameof(TurnOFf), lifeTime);
@@ -18,5 +26,8 @@ public class _03Projectile : MonoBehaviour
         }
     }
     private void TurnOFf() => ObjectPooler.Instance.ReturnObjectToPool("projectile",gameObject);
+
+
+
 }
 

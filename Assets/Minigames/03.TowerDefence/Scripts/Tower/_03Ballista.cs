@@ -6,7 +6,7 @@ public class _03Ballista : _03TowerScript
 {
     [SerializeField] private Transform canonTransform;
     [SerializeField] private bool drawGizmos;
-    [SerializeField] private float projectileSpeed=25f;
+    [SerializeField] private float projectileSpeed = 25f;
     public float rotationTime = 1f;
     public _03Projectile projectilePrefab;
     public float thresholdAngle = 45f;
@@ -107,20 +107,26 @@ public class _03Ballista : _03TowerScript
             Vector3 direction = target.position - transform.position;
             Rigidbody rb = projectile?.gameObject?.GetComponent<Rigidbody>();
             rb?.AddForce(direction.normalized * projectileSpeed, ForceMode.Impulse);
+            AudioManager_Test.Instance.PlaySound("Shoot");
 
         }
     }
     public void Kaputt()
     {
-        anim.SetBool("isAlive", false);
-        anim.SetTrigger("kaputt");
-        StopAllCoroutines();
+        if (gameObject.activeInHierarchy)
+        {
+            anim.SetTrigger("kaputt");
+            StopAllCoroutines();
+        }
+
     }
     public void Spawn()
     {
-        gameObject.SetActive(true);
-        anim.SetBool("isAlive", true);
-        anim.SetTrigger("spawn");
-        StartCoroutine(ScanForEnemies());
+
+            
+            StartCoroutine(ScanForEnemies());
+        
+
     }
+    public void Deactivate() => gameObject.SetActive(false);
 }
