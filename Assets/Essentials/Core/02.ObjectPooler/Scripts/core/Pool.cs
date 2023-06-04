@@ -28,7 +28,7 @@ namespace Essentials
         {
             if (objectPool.Count == 0)
             {
-                Debug.LogWarning("Object pool is empty. Consider increasing pool size.");
+                Debug.LogWarning($"Object pool {name} is empty. Consider increasing pool size.");
                 return null;
             }
             GameObject obj = objectPool.Dequeue();

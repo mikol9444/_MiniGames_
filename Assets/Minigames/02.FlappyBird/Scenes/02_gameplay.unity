@@ -1677,7 +1677,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 0c1998f8b8dcab2429e507d3ade8a788, type: 3}
     audioSource: {fileID: 0}
     pitch: 1
-    volume: 0.65
+    volume: 1
     isRunning: 0
     loop: 1
     playOnStart: 1

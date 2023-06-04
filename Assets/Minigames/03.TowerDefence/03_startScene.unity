@@ -3102,5 +3102,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnButton_03
       objectReference: {fileID: 0}
+    - target: {fileID: 75614904905043705, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
+      propertyPath: scanInterval
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 75614904905043705, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
+      propertyPath: projectileSpeed
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}

@@ -530,7 +530,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5cb7774c28e2a114fb039919d0a9fd4f, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1927,10 +1927,10 @@ Animation:
   m_GameObject: {fileID: 2478244567164404819}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 263b52f5b1e3f074ba8b26cd6281095c, type: 2}
+  m_Animation: {fileID: 7400000, guid: 7954ca9cfdfd69e46849b79755e17e6a, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 263b52f5b1e3f074ba8b26cd6281095c, type: 2}
-  - {fileID: 7400000, guid: 9245eae6a2418fe45aa305181e9c10ea, type: 2}
+  - {fileID: 7400000, guid: 7954ca9cfdfd69e46849b79755e17e6a, type: 2}
+  - {fileID: 7400000, guid: 3c369091fa84b7a4d8facec5f04c0106, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -2004,8 +2004,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2478244567164404908}
-  popinClip: {fileID: 7400000, guid: 9245eae6a2418fe45aa305181e9c10ea, type: 2}
-  popupClip: {fileID: 7400000, guid: 263b52f5b1e3f074ba8b26cd6281095c, type: 2}
+  popinClip: {fileID: 7400000, guid: 3c369091fa84b7a4d8facec5f04c0106, type: 2}
+  popupClip: {fileID: 7400000, guid: 7954ca9cfdfd69e46849b79755e17e6a, type: 2}
   txt: {fileID: 2478244568230248079}
 --- !u!224 &2478244568230248072
 RectTransform:

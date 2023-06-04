@@ -104,11 +104,7 @@ public class _03Ballista : _03TowerScript
             _03Projectile projectile = Essentials.ObjectPooler.Instance?.GetObjectFromPool("projectile")?.GetComponent<_03Projectile>();
             projectile?.transform.SetPositionAndRotation(shootingPoint.position, Quaternion.identity);
             //= Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            Vector3 direction = target.position - transform.position;
-            Rigidbody rb = projectile?.gameObject?.GetComponent<Rigidbody>();
-            rb?.AddForce(direction.normalized * projectileSpeed, ForceMode.Impulse);
-            AudioManager_Test.Instance.PlaySound("Shoot");
-
+            projectile?.NavigateTowardsEnemy(target,projectileSpeed);
         }
     }
     public void Kaputt()
