@@ -16,12 +16,12 @@ public class _02FlappyController : MonoBehaviour
     {
         // Get the Rigidbody component
         rb = GetComponent<Rigidbody>();
-        Physics.gravity = new Vector3(0f, -9.81f * gravityMultiplikator,0f);
+        Physics.gravity = new Vector3(0f, -9.81f * gravityMultiplikator, 0f);
         man = FindObjectOfType<PopUpManager>();
     }
     private void OnEnable()
     {
-        InputManager._JumpEvent += ListenToJumpInput; 
+        InputManager._JumpEvent += ListenToJumpInput;
     }
     private void OnDisable()
     {
@@ -31,11 +31,15 @@ public class _02FlappyController : MonoBehaviour
     private void FixedUpdate()
     {
         // Apply horizontal movement to the player
-        rb.velocity = new Vector2( movementSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(movementSpeed, rb.velocity.y);
 
         // Apply jump force if the jump button has been pressed and the player is on the ground
-        if (jumpPressed )
+        if (jumpPressed)
         {
+            if (rb.velocity.y <= 0)
+            {
+                rb.velocity = Vector3.zero;
+            }
             rb.AddForce(Vector2.up * jumpForce, ForceMode.Impulse);
             PlaySound();
             jumpPressed = false;
