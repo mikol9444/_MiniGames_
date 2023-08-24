@@ -69,6 +69,9 @@ EditorBuildSettings:
     path: Assets/Minigames/04.ScreenTapper/04_ScreenTapper.unity
     guid: 33dc50da680a87e4b9376ce15a93b955
   - enabled: 1
+    path: Assets/Minigames/05.TowerStack/05_TowerStack.unity
+    guid: 7f12c5017129d6740b8bec56c99c23c3
+  - enabled: 1
     path: Assets/Essentials/Core/03.SceneManager/scenemanager01.unity
     guid: a7a92e90a30273b42aae6fec4dac9b73
   - enabled: 1

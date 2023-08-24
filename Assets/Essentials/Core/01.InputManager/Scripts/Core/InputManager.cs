@@ -13,6 +13,8 @@ namespace Essentials
         public static event Action<bool> _SprintEvent;
         public static event Action _InteractEvent;
         public static event Action<bool> _CrouchEvent;
+        public static event Action _Fire1Event;
+
 
         //UI ACTIONS
         public static event Action _PauseEvent;
@@ -21,10 +23,14 @@ namespace Essentials
         public static event Action _Button3Event;
         private void Awake()
         {
-            _ActionMap = new ActionMap();
-            _ActionMap.Enable();
-            _ActionMap.Player.SetCallbacks(this);
-            _ActionMap.UI.SetCallbacks(this);
+            if (_ActionMap == null)
+            {
+                _ActionMap = new ActionMap();
+                _ActionMap.Enable();
+                _ActionMap.Player.SetCallbacks(this);
+                _ActionMap.UI.SetCallbacks(this);
+            }
+
         }
 
         public void OnMove(InputAction.CallbackContext context) => _MovementEvent?.Invoke(context.ReadValue<Vector2>());
@@ -53,6 +59,14 @@ namespace Essentials
             else if (context.canceled)
             {
                 _CrouchEvent?.Invoke(false);
+            }
+        }
+        public void OnFire1(InputAction.CallbackContext context)
+        {
+
+            if (context.performed)
+            {
+                _Fire1Event?.Invoke();//
             }
         }
     }
