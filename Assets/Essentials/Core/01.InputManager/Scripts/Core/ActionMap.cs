@@ -74,12 +74,12 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Fire1"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""f2182957-abfe-49b6-be33-de33540fd081"",
-                    ""expectedControlType"": """",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -251,7 +251,7 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f6b50a30-b4b4-415e-85ba-4acb78f0c03e"",
-                    ""path"": ""<Touchscreen>/Press"",
+                    ""path"": ""<Touchscreen>/touch0/tap"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
