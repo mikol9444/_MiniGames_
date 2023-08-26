@@ -16,7 +16,7 @@ public class _01EvaGameMaster : MonoBehaviour
     {
         deathCounter = 0;
 
-        if (Instance != null ) { Destroy(gameObject); return; }
+        if (Instance != null) { Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(this);
 
@@ -32,7 +32,7 @@ public class _01EvaGameMaster : MonoBehaviour
         startPositionTransform = GameObject.FindGameObjectWithTag("Start")?.transform;
         if (!startPositionTransform) Debug.LogWarning("No start Flag Detected");
         popup = FindObjectOfType<Popup>();
-        if(!popup) Debug.LogWarning("No Popup Detected");
+        if (!popup) Debug.LogWarning("No Popup Detected");
 
         if (playerTransform && startPositionTransform)
             playerTransform.position = new Vector3(startPositionTransform.position.x, startPositionTransform.position.y, 0f);
@@ -41,14 +41,14 @@ public class _01EvaGameMaster : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         _01EvaCollisionHandler.deadAction += _DeathScore;
-        InputManager._Button1Event += OnButton1Pressed;
-        
+        InputManager.Instance._Button1Event += OnButton1Pressed;
+
     }
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         _01EvaCollisionHandler.deadAction -= _DeathScore;
-        InputManager._Button1Event -= OnButton1Pressed;
+        InputManager.Instance._Button1Event -= OnButton1Pressed;
     }
     public void OnButton1Pressed()
     {

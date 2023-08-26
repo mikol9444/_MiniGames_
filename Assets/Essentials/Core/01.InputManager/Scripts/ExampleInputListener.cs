@@ -14,25 +14,25 @@ namespace Essentials
 
         private void OnEnable()
         {
-            InputManager._MovementEvent += OnMove;
-            InputManager._JumpEvent += OnJump;
-            InputManager._InteractEvent += OnInteract;
-            InputManager._Button1Event += OnButton1Press;
-            InputManager._Button2Event += OnButton2Press;
-            InputManager._Button3Event += OnButton3Press;
-            InputManager._PauseEvent += OnPausePressed;
-            InputManager._SprintEvent += OnSprint;
+            InputManager.Instance._MovementEvent += OnMove;
+            InputManager.Instance._JumpEvent += OnJump;
+            InputManager.Instance._InteractEvent += OnInteract;
+            InputManager.Instance._Button1Event += OnButton1Press;
+            InputManager.Instance._Button2Event += OnButton2Press;
+            InputManager.Instance._Button3Event += OnButton3Press;
+            InputManager.Instance._PauseEvent += OnPausePressed;
+            InputManager.Instance._SprintEvent += OnSprint;
         }
         private void OnDisable()
         {
-            InputManager._MovementEvent -= OnMove;
-            InputManager._JumpEvent -= OnJump;
-            InputManager._InteractEvent -= OnInteract;
-            InputManager._Button1Event -= OnButton1Press;
-            InputManager._Button2Event -= OnButton2Press;
-            InputManager._Button3Event -= OnButton3Press;
-            InputManager._PauseEvent -= OnPausePressed;
-            InputManager._SprintEvent -= OnSprint;
+            InputManager.Instance._MovementEvent -= OnMove;
+            InputManager.Instance._JumpEvent -= OnJump;
+            InputManager.Instance._InteractEvent -= OnInteract;
+            InputManager.Instance._Button1Event -= OnButton1Press;
+            InputManager.Instance._Button2Event -= OnButton2Press;
+            InputManager.Instance._Button3Event -= OnButton3Press;
+            InputManager.Instance._PauseEvent -= OnPausePressed;
+            InputManager.Instance._SprintEvent -= OnSprint;
         }
 
 

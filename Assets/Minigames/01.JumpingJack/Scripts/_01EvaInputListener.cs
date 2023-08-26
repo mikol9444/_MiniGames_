@@ -16,17 +16,22 @@ public class _01EvaInputListener : MonoBehaviour
 
     private void OnEnable()
     {
-        InputManager._JumpEvent += OnJumpPerformed;
-        InputManager._CrouchEvent += OnCrouchPerformed;
-        InputManager._MovementEvent += OnMovementActive;
+        InputManager.Instance._JumpEvent += OnJumpPerformed;
+        InputManager.Instance._CrouchEvent += OnCrouchPerformed;
+        InputManager.Instance._MovementEvent += OnMovementActive;
     }
     private void OnDisable()
     {
-        InputManager._JumpEvent -= OnJumpPerformed;
-        InputManager._CrouchEvent -= OnCrouchPerformed;
-        InputManager._MovementEvent -= OnMovementActive;
+
+        InputManager.Instance._JumpEvent -= OnJumpPerformed;
+        InputManager.Instance._CrouchEvent -= OnCrouchPerformed;
+        InputManager.Instance._MovementEvent -= OnMovementActive;
     }
-    private void OnJumpPerformed(bool state) => isJumpingPressed = state;
+    private void OnJumpPerformed(bool state)
+    {
+        isJumpingPressed = state;
+        Debug.Log("Jumping!");
+    }
     private void OnCrouchPerformed(bool state) => isCrouchingPressed = state;
     private void OnMovementActive(Vector2 dir) => moveDirection = dir;
 

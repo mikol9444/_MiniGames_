@@ -8,21 +8,24 @@ namespace Essentials
     {
         // PLAYER ACTIONS
         private ActionMap _ActionMap;
-        public static event Action<Vector2> _MovementEvent;
-        public static event Action<bool> _JumpEvent;
-        public static event Action<bool> _SprintEvent;
-        public static event Action _InteractEvent;
-        public static event Action<bool> _CrouchEvent;
-        public static event Action _Fire1Event;
+        public static InputManager Instance;
+        public event Action<Vector2> _MovementEvent;
+        public event Action<bool> _JumpEvent;
+        public event Action<bool> _SprintEvent;
+        public event Action _InteractEvent;
+        public event Action<bool> _CrouchEvent;
+        public event Action _Fire1Event;
 
 
         //UI ACTIONS
-        public static event Action _PauseEvent;
-        public static event Action _Button1Event;
-        public static event Action _Button2Event;
-        public static event Action _Button3Event;
+        public event Action _PauseEvent;
+        public event Action _Button1Event;
+        public event Action _Button2Event;
+        public event Action _Button3Event;
         private void Awake()
         {
+            if (Instance != null) Destroy(gameObject);
+            Instance = this;
             if (_ActionMap == null)
             {
                 _ActionMap = new ActionMap();
@@ -33,6 +36,17 @@ namespace Essentials
 
         }
 
+        public void ClearJumpEvent()
+        {
+            if (_JumpEvent != null)
+            {
+                Delegate[] delegates = _JumpEvent.GetInvocationList();
+                foreach (Delegate del in delegates)
+                {
+                    _JumpEvent -= (Action<bool>)del;
+                }
+            }
+        }
         public void OnMove(InputAction.CallbackContext context) => _MovementEvent?.Invoke(context.ReadValue<Vector2>());
         public void OnJump(InputAction.CallbackContext context)
         {

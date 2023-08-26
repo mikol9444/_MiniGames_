@@ -21,11 +21,11 @@ public class _02FlappyController : MonoBehaviour
     }
     private void OnEnable()
     {
-        InputManager._JumpEvent += ListenToJumpInput;
+        InputManager.Instance._JumpEvent += ListenToJumpInput;
     }
     private void OnDisable()
     {
-        InputManager._JumpEvent -= ListenToJumpInput;
+        InputManager.Instance._JumpEvent -= ListenToJumpInput;
     }
     private void ListenToJumpInput(bool state) { jumpPressed = state; }
     private void FixedUpdate()

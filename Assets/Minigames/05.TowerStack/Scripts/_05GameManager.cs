@@ -7,18 +7,18 @@ public class _05GameManager : MonoBehaviour
     private void OnEnable()
     {
         // InputManager._SprintEvent += OnSprint;
-        InputManager._Fire1Event += OnFire;
+        InputManager.Instance._Fire1Event += OnFire;
     }
     /// <summary>
     /// This function is called when the behaviour becomes disabled or inactive.
     /// </summary>
     private void OnDisable()
     {
-        InputManager._Fire1Event -= OnFire;
+        InputManager.Instance._Fire1Event -= OnFire;
     }
     public void DisableEvents()
     {
-        InputManager._Fire1Event -= OnFire;
+        InputManager.Instance._Fire1Event -= OnFire;
     }
 
     private void OnFire()

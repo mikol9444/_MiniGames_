@@ -19,8 +19,8 @@ public class _01EvaMovementController : MonoBehaviour
     [SerializeField] public Slider jetpackFuelSlider;
 
     //Intern
-    [HideInInspector]private bool isPlayingSound = false;
-    [HideInInspector]public bool isAlive = true;
+    [HideInInspector] private bool isPlayingSound = false;
+    [HideInInspector] public bool isAlive = true;
     private Rigidbody rb;
     private CapsuleCollider coll;
     private _01EvaInputListener input;
@@ -61,37 +61,37 @@ public class _01EvaMovementController : MonoBehaviour
         jetpackFuelSlider = FindObjectOfType<_01PlaceHolder>()?.GetComponent<Slider>();
 
     }
-    private void OnEnable()
+    private void Start()
     {
-        InputManager._CrouchEvent += OnCrouchPerformed;
-        InputManager._MovementEvent += OnMovementActive;
+        InputManager.Instance._CrouchEvent += OnCrouchPerformed;
+        InputManager.Instance._MovementEvent += OnMovementActive;
 
     }
     private void OnDisable()
     {
 
-        InputManager._CrouchEvent -= OnCrouchPerformed;
-        InputManager._MovementEvent -= OnMovementActive;
+        InputManager.Instance._CrouchEvent -= OnCrouchPerformed;
+        InputManager.Instance._MovementEvent -= OnMovementActive;
     }
     private void FixedUpdate()
     {
-        float value = Mathf.Clamp(timeLeftToFly/maxFlyDuration,jetpackFuelSlider.minValue , jetpackFuelSlider.maxValue);
+        float value = Mathf.Clamp(timeLeftToFly / maxFlyDuration, jetpackFuelSlider.minValue, jetpackFuelSlider.maxValue);
         jetpackFuelSlider.value = value;
         // Vertical Movement
-        if (input.IsJumpingPressed&&canFly)
+        if (input.IsJumpingPressed && canFly)
         {
             rb.AddForce(Vector3.up * jetpackPower, ForceMode.Force);
             TimeLeftToFly -= Time.deltaTime;
             foreach (var item in trails)
             {
-                item.emitting = input.IsJumpingPressed&&canFly;
+                item.emitting = input.IsJumpingPressed && canFly;
             }
             if (!isPlayingSound)
             {
                 AudioManager_Test.Instance.PlaySound("jetpack");
                 isPlayingSound = true;
             }
-            
+
         }
         else
         {
@@ -110,17 +110,17 @@ public class _01EvaMovementController : MonoBehaviour
 
 
         // Horizontal Movement
-        if (input.MoveDirection!=Vector3.zero)
+        if (input.MoveDirection != Vector3.zero)
         {
-            rb.AddForce(new Vector3(input.MoveDirection.x,0f) * movementSpeed);
+            rb.AddForce(new Vector3(input.MoveDirection.x, 0f) * movementSpeed);
         }
 
         //BREAKING
 
         //Horizontal
-        if (rb.velocity.x> maxVelocityX)
+        if (rb.velocity.x > maxVelocityX)
         {
-            rb.AddForce(Vector3.left * movementSpeed);    
+            rb.AddForce(Vector3.left * movementSpeed);
         }
         else if (rb.velocity.x < -maxVelocityX)
         {
@@ -138,7 +138,7 @@ public class _01EvaMovementController : MonoBehaviour
         }
 
     }
-    private void AddHorizontalVelocity(Vector3 dir,float speed)
+    private void AddHorizontalVelocity(Vector3 dir, float speed)
     {
 
     }

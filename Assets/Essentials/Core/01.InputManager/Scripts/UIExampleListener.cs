@@ -23,15 +23,15 @@ namespace Essentials
         private bool pPressed = true;
         private void OnEnable()
         {
-            InputManager._MovementEvent += MoveButton;
-            InputManager._PauseEvent += P_Button;
-            InputManager._SprintEvent += G_Button;
+            InputManager.Instance._MovementEvent += MoveButton;
+            InputManager.Instance._PauseEvent += P_Button;
+            InputManager.Instance._SprintEvent += G_Button;
         }
         private void OnDisable()
         {
-            InputManager._MovementEvent -= MoveButton;
-            InputManager._PauseEvent -= P_Button;
-            InputManager._SprintEvent -= G_Button;
+            InputManager.Instance._MovementEvent -= MoveButton;
+            InputManager.Instance._PauseEvent -= P_Button;
+            InputManager.Instance._SprintEvent -= G_Button;
         }
 
         private void MoveButton(Vector2 dir)
