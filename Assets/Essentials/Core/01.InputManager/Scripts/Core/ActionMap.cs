@@ -250,9 +250,9 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f6b50a30-b4b4-415e-85ba-4acb78f0c03e"",
-                    ""path"": ""<Touchscreen>/touch0/tap"",
-                    ""interactions"": ""Press"",
+                    ""id"": ""a1930156-e76f-40ce-826a-ca923f2dd8b5"",
+                    ""path"": ""<VirtualMouse>/leftButton"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Fire1"",

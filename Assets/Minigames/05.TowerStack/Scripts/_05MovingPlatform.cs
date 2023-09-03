@@ -139,9 +139,10 @@ public class _05MovingPlatform : MonoBehaviour
     private void SpawnDropCube(float fallingBlockZPosition, float fallingBlockSize)
     {
         bool spawnOnZ = FindObjectOfType<_05GameManager>().spawnOnZ;
+        var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
         if (spawnOnZ)
         {
-            var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            
             cube.transform.localScale = new Vector3(fallingBlockSize, 0.1f, LastPlatform.transform.localScale.z);
             cube.transform.position = new Vector3(fallingBlockZPosition, CurrentPlatform.transform.position.y, CurrentPlatform.transform.position.z);
             cube.AddComponent<Rigidbody>();
@@ -151,7 +152,6 @@ public class _05MovingPlatform : MonoBehaviour
         }
         else
         {
-            var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             cube.transform.localScale = new Vector3(LastPlatform.transform.localScale.z, 0.1f, fallingBlockSize);
             cube.transform.position = new Vector3(CurrentPlatform.transform.position.x, CurrentPlatform.transform.position.y, fallingBlockZPosition);
             cube.AddComponent<Rigidbody>();
