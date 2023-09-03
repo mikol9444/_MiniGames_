@@ -808,11 +808,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 78909159066154432, guid: 06622255e15bc2e4285c6d6d4a9a6ada, type: 3}
-  switchLookDirection: 1
-  height: 0.1
+  platformForward: 0
+  height: 0
   CurrentPlatform: {fileID: 0}
   LastPlatform: {fileID: 0}
-  distanceToOrigin: 2
+  distanceToOrigin: 3
   distanceThreshold: 1
   applyDistance: 0.1
   direction: 1
