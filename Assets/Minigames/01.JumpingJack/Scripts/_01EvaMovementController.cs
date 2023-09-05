@@ -24,10 +24,18 @@ public class _01EvaMovementController : MonoBehaviour
     private Rigidbody rb;
     private CapsuleCollider coll;
     private _01EvaInputListener input;
+    public _01EvaAnimatorController anim;
     private TrailRenderer[] trails = new TrailRenderer[2];
 
     // PROPERTIES
-    [SerializeField]
+    [SerializeField] public bool isGrounded = false; // Flag to track if the player is currently jumping.
+    [SerializeField] public bool firstJumpPerforemed = false;
+    [SerializeField] public bool secondJumpPerformed = false;
+    [SerializeField] public int jumpCount = 0; // Track the number of jumps.
+    [SerializeField] private float lastJumpTime = 0f; // Record the time of the last jump.
+    [SerializeField] private float jumpCooldown = 1f;
+    [SerializeField] private float jumpPower = 25f;
+    public float LastJumpTime { get { return lastJumpTime; } set { if (value < 0) return; else lastJumpTime = value; } }
     private float TimeLeftToFly
     {
         get => timeLeftToFly;
@@ -38,6 +46,7 @@ public class _01EvaMovementController : MonoBehaviour
             {
                 timeLeftToFly = 0f;
                 canFly = false;
+                jumpCount = 0;
             }
             if (timeLeftToFly / maxFlyDuration > 0.5f)
             {
@@ -60,26 +69,67 @@ public class _01EvaMovementController : MonoBehaviour
         Physics.gravity = new Vector3(0f, -9.81f * gravityMultiplikator, 0f);
         jetpackFuelSlider = FindObjectOfType<_01PlaceHolder>()?.GetComponent<Slider>();
 
+
     }
     private void Start()
     {
         InputManager.Instance._CrouchEvent += OnCrouchPerformed;
         InputManager.Instance._MovementEvent += OnMovementActive;
-
+        InputManager.Instance._JumpEvent += CountJumps;
+        // anim.GetComponent<_01EvaAnimatorController>();
     }
     private void OnDisable()
     {
 
         InputManager.Instance._CrouchEvent -= OnCrouchPerformed;
         InputManager.Instance._MovementEvent -= OnMovementActive;
+        InputManager.Instance._JumpEvent -= CountJumps;
+    }
+    private void CountJumps(bool performed)
+    {
+        jumpCount++;
+        if (performed)
+        {
+
+            if (jumpCount > 3) jumpCount = 3;
+            switch (jumpCount)
+            {
+                case 0:
+
+                    break;
+                case 1:
+                    if (isGrounded)
+                    {
+                        anim.setGroundedValue(false);
+                        firstJumpPerforemed = true;
+                        rb.AddForce(Vector3.up * jumpPower * 1.35f, ForceMode.Impulse);
+                        LastJumpTime = jumpCooldown;
+                        anim.SetBlendValue(0f);
+                    }
+
+                    break;
+                case 2:
+                    secondJumpPerformed = true;
+                    rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+                    anim.SetBlendValue(1f);
+                    break;
+            }
+        }
+
     }
     private void FixedUpdate()
     {
         float value = Mathf.Clamp(timeLeftToFly / maxFlyDuration, jetpackFuelSlider.minValue, jetpackFuelSlider.maxValue);
         jetpackFuelSlider.value = value;
-        // Vertical Movement
-        if (input.IsJumpingPressed && canFly)
+        LastJumpTime -= Time.deltaTime;
+        if (rb.velocity.y < -5.5f)
         {
+            anim.SetBlendValue(3f);
+        }
+        // Vertical Movement
+        if (jumpCount == 3 && input.IsJumpingPressed && canFly)
+        {
+            anim.SetBlendValue(2f);
             rb.AddForce(Vector3.up * jetpackPower, ForceMode.Force);
             TimeLeftToFly -= Time.deltaTime;
             foreach (var item in trails)
@@ -114,6 +164,13 @@ public class _01EvaMovementController : MonoBehaviour
         {
             rb.AddForce(new Vector3(input.MoveDirection.x, 0f) * movementSpeed);
         }
+        else
+        {
+            if (Mathf.Abs(rb.velocity.y) < 0.05f)
+            {
+                rb.velocity = Vector3.zero;
+            }
+        }
 
         //BREAKING
 
@@ -145,8 +202,8 @@ public class _01EvaMovementController : MonoBehaviour
 
     private void OnCrouchPerformed(bool state)
     {
-        coll.center = state ? new Vector3(0f, 1f, 0f) : new Vector3(0f, 1.5f, 0f);
-        coll.height = state ? 1.5f : 3f;
+        coll.center = state ? new Vector3(0f, .5f, 0f) : new Vector3(0f, 1.5f, 0f);
+        coll.height = state ? 1.5f : 2.8f;
     }
     private void OnMovementActive(Vector2 dir)
     {

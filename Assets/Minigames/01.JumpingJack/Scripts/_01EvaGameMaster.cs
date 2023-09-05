@@ -41,7 +41,11 @@ public class _01EvaGameMaster : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         _01EvaCollisionHandler.deadAction += _DeathScore;
-        InputManager.Instance._Button1Event += OnButton1Pressed;
+        if (InputManager.Instance)
+        {
+            InputManager.Instance._Button1Event += OnButton1Pressed;
+        }
+
 
     }
     private void OnDisable()

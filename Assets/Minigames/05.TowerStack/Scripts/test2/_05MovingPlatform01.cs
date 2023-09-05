@@ -14,8 +14,9 @@ public class _05MovingPlatform01 : MonoBehaviour
     public static int ID { get; set; }
     public Coroutine movementCoroutine; // Reference to the movement coroutine
 
-    public void Initialize(bool platformForward = true)
+    public void Initialize(bool platformForward = true,float speed=1f)
     {
+        Speed = speed;
         GetComponent<Renderer>().material.color = GetRandomColor();
 
         initialPosition = transform.position; // Store the initial position
@@ -26,10 +27,11 @@ public class _05MovingPlatform01 : MonoBehaviour
     }
     public static Color GetRandomColor()
     {
-        float[] colorValues = new float[3];
-        for (int i = 0; i < colorValues.Length; i++)
-            colorValues[i] = UnityEngine.Random.Range(0, 1f);
-        return new Color(colorValues[0], colorValues[1], colorValues[2], 1f);
+        // float[] colorValues = new float[3];
+        // for (int i = 0; i < colorValues.Length; i++)
+        //     colorValues[i] = UnityEngine.Random.Range(0, 1f);
+        // return new Color(colorValues[0], colorValues[1], colorValues[2], 1f);
+        return FindObjectOfType<_05GameManager01>().gradientValue();
     }
     private IEnumerator MovePlatform(bool platformForward = true)
     {

@@ -9,11 +9,17 @@ public class _01EvaCollisionHandler : MonoBehaviour
     private bool isWon = default;
     public static Action deadAction;
     public UnityEvent onLevelEnd;
+    _01EvaMovementController c;
     private void Awake()
     {
         controller = GetComponent<_01EvaMovementController>();
         blinker = GetComponent<ColorBlinker>();
 
+
+    }
+    private void Start()
+    {
+        c = GetComponent<_01EvaMovementController>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -34,7 +40,7 @@ public class _01EvaCollisionHandler : MonoBehaviour
             this.enabled = false;
             deadAction?.Invoke();
         }
-        if (!isWon &&other.CompareTag("Goal"))
+        if (!isWon && other.CompareTag("Goal"))
         {
             isWon = true;
             _01EvaGameMaster.Instance.OnButton1Pressed(); // Should Invoke the Popup
@@ -42,6 +48,36 @@ public class _01EvaCollisionHandler : MonoBehaviour
             AudioManager_Test.Instance.StopSound("jetpack");
             onLevelEnd?.Invoke();
             Destroy(controller);
+        }
+
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag("Ground") && c)
+        {
+
+            c.isGrounded = true; c.firstJumpPerforemed = false; c.secondJumpPerformed = false;
+            c.jumpCount = 0;
+            if (c.anim) c.anim.setGroundedValue(true);
+
+        }
+    }
+    private void OnCollisionStay(Collision other) {
+                if (other.collider.CompareTag("Ground") && c)
+        {
+
+            c.isGrounded = true; c.firstJumpPerforemed = false; c.secondJumpPerformed = false;
+            c.jumpCount = 0;
+            if (c.anim) c.anim.setGroundedValue(true);
+
+        }
+    }
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.collider.CompareTag("Ground"))
+        {
+            c.isGrounded = false;
+            if (c.anim) c.anim.setGroundedValue(false);
         }
     }
 }
