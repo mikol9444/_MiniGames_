@@ -55,18 +55,18 @@ public class _01EvaCollisionHandler : MonoBehaviour
     {
         if (other.collider.CompareTag("Ground") && c)
         {
-
-            c.isGrounded = true; c.firstJumpPerforemed = false; c.secondJumpPerformed = false;
+            c.firstJumpPerforemed = false; c.secondJumpPerformed = false;
             c.jumpCount = 0;
             if (c.anim) c.anim.setGroundedValue(true);
 
         }
     }
-    private void OnCollisionStay(Collision other) {
-                if (other.collider.CompareTag("Ground") && c)
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.collider.CompareTag("Ground") && c)
         {
 
-            c.isGrounded = true; c.firstJumpPerforemed = false; c.secondJumpPerformed = false;
+            c.isGrounded = true;
             c.jumpCount = 0;
             if (c.anim) c.anim.setGroundedValue(true);
 
@@ -76,7 +76,7 @@ public class _01EvaCollisionHandler : MonoBehaviour
     {
         if (other.collider.CompareTag("Ground"))
         {
-            c.isGrounded = false;
+            c.isGrounded = false;c.firstJumpPerforemed=true;c.secondJumpPerformed=true;
             if (c.anim) c.anim.setGroundedValue(false);
         }
     }

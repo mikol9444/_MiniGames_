@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 194762858}
   m_IndirectSpecularColor: {r: 0.59082043, g: 0.66184765, b: 0.6789231, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 6e2084210f3fa704d8316092d3f3b8bb, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1020,6 +1020,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4365933438026575477, guid: 22de7e5d5b6bd1e4494b4c1159ec3d76, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2740491068722401411, guid: 5be395563c0df8549959ad611c576428, type: 3}
+    - target: {fileID: 4612360465716351314, guid: 22de7e5d5b6bd1e4494b4c1159ec3d76, type: 3}
+      propertyPath: jetpackPower
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 6308306977681421991, guid: 22de7e5d5b6bd1e4494b4c1159ec3d76, type: 3}
       propertyPath: m_Name
       value: Eva 1

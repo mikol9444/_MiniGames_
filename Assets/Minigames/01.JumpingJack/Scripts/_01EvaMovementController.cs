@@ -36,6 +36,11 @@ public class _01EvaMovementController : MonoBehaviour
     [SerializeField] private float jumpCooldown = 1f;
     [SerializeField] private float jumpPower = 25f;
     public float LastJumpTime { get { return lastJumpTime; } set { if (value < 0) return; else lastJumpTime = value; } }
+    public float sphereCastRadius = 1.0f; // Adjust the radius in the Inspector
+    public LayerMask hitLayers; // Define the layers you want to consider for hits
+    public string targetTag = "Target"; // Specify the tag you want to check
+    public Vector3 sphereCastOffset; // Adjust the offset in the Inspector
+
     private float TimeLeftToFly
     {
         get => timeLeftToFly;
@@ -102,16 +107,21 @@ public class _01EvaMovementController : MonoBehaviour
                     {
                         anim.setGroundedValue(false);
                         firstJumpPerforemed = true;
-                        rb.AddForce(Vector3.up * jumpPower * 1.35f, ForceMode.Impulse);
+                        rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
                         LastJumpTime = jumpCooldown;
                         anim.SetBlendValue(0f);
                     }
 
                     break;
                 case 2:
-                    secondJumpPerformed = true;
-                    rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
-                    anim.SetBlendValue(1f);
+                    if (firstJumpPerforemed)
+                    {
+                        firstJumpPerforemed = false;
+                        secondJumpPerformed = true;
+                        rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+                        anim.SetBlendValue(1f);
+
+                    }
                     break;
             }
         }
@@ -119,28 +129,30 @@ public class _01EvaMovementController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        float value = Mathf.Clamp(timeLeftToFly / maxFlyDuration, jetpackFuelSlider.minValue, jetpackFuelSlider.maxValue);
+        float value = Mathf.Clamp(timeLeftToFly / maxFlyDuration, 0f, 1f);
         jetpackFuelSlider.value = value;
         LastJumpTime -= Time.deltaTime;
-        if (rb.velocity.y < -5.5f)
-        {
-            anim.SetBlendValue(3f);
-        }
+
         // Vertical Movement
-        if (jumpCount == 3 && input.IsJumpingPressed && canFly)
+        bool ableToFly = !isGrounded && canFly && input.IsJumpingPressed;
+        if (ableToFly)
         {
-            anim.SetBlendValue(2f);
-            rb.AddForce(Vector3.up * jetpackPower, ForceMode.Force);
-            TimeLeftToFly -= Time.deltaTime;
-            foreach (var item in trails)
+            if (jumpCount >= 3)
             {
-                item.emitting = input.IsJumpingPressed && canFly;
+                anim.SetBlendValue(2f);
+                rb.AddForce(Vector3.up * jetpackPower, ForceMode.Force);
+                TimeLeftToFly -= Time.deltaTime;
+                foreach (var item in trails)
+                {
+                    item.emitting = input.IsJumpingPressed && canFly;
+                }
+                if (!isPlayingSound)
+                {
+                    AudioManager_Test.Instance.PlaySound("jetpack");
+                    isPlayingSound = true;
+                }
             }
-            if (!isPlayingSound)
-            {
-                AudioManager_Test.Instance.PlaySound("jetpack");
-                isPlayingSound = true;
-            }
+
 
         }
         else
@@ -156,6 +168,13 @@ public class _01EvaMovementController : MonoBehaviour
                 isPlayingSound = false;
             }
         }
+        if (rb.velocity.y <= -maxVelocityY)
+        {
+            anim.OnJumpPerformed(true);
+            anim.SetBlendValue(3f);
+            jumpCount = 3;
+        }
+
 
 
 
@@ -213,4 +232,13 @@ public class _01EvaMovementController : MonoBehaviour
 
     }
 
+
 }
+
+
+
+
+
+
+
+

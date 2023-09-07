@@ -27,6 +27,7 @@ public class _01LevelUNlocker : MonoBehaviour
         for (int i = 0; i <= levelProgress; i++)
         {
             buttons[i].interactable = true;
+            buttons[i].image.color = Color.white;
             anims[i].enabled = true;
         }
     }

@@ -32,7 +32,7 @@ public class _01EvaAnimatorController : MonoBehaviour
     {
         anim.SetBool("isGrounded", value);
     }
-    private void OnJumpPerformed(bool state)
+    public void OnJumpPerformed(bool state)
     {
         anim.SetBool("jump", state);
     }

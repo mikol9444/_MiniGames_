@@ -72,7 +72,9 @@ public class _05GameManager01 : MonoBehaviour, IPointerDownHandler
         CurrentPlatform = SpawnMovingPlatform();
 
         // Camera.main.transform.position += Vector3.up * 0.1f;
-        FindObjectOfType<CameraFollow>().playerTransform = LastPlatform.transform;
+        // FindObjectOfType<CameraFollow>().playerTransform = LastPlatform.transform;
+        CameraFollow cam = FindObjectOfType<CameraFollow>();
+        cam.cameraOffset += new Vector3(0,0.1f,0);
         scorePopupup.SetTextAndPlayAnimation((++PlatformCount).ToString());
         // Determine spawn position based on look direction
 
