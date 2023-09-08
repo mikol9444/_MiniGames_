@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 194762858}
-  m_IndirectSpecularColor: {r: 0.59082043, g: 0.66184765, b: 0.6789231, a: 1}
+  m_IndirectSpecularColor: {r: 0.051253907, g: 0.15760669, b: 0.2968902, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1512,6 +1512,26 @@ PrefabInstance:
     - target: {fileID: 2305246205618968824, guid: 40bbf9c78b263794e8666edda44c4ecb, type: 3}
       propertyPath: m_Name
       value: Shooter_Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051675963413360253, guid: 40bbf9c78b263794e8666edda44c4ecb, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 3533141215544440758, guid: 6736d20dd3c6a8f4fa268ffbe4541ea0, type: 3}
+    - target: {fileID: 4051675963413360253, guid: 40bbf9c78b263794e8666edda44c4ecb, type: 3}
+      propertyPath: movementSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051675963413360253, guid: 40bbf9c78b263794e8666edda44c4ecb, type: 3}
+      propertyPath: startPosition.x
+      value: 12.9911785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051675963413360253, guid: 40bbf9c78b263794e8666edda44c4ecb, type: 3}
+      propertyPath: startPosition.y
+      value: 16.812548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4051675963413360253, guid: 40bbf9c78b263794e8666edda44c4ecb, type: 3}
+      propertyPath: timeTillDestination
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40bbf9c78b263794e8666edda44c4ecb, type: 3}
