@@ -19,14 +19,27 @@ public class _06_EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     public int currentWaveIndex = 0;
     public float timeBetweenWaves = 5f; // Adjust this time between waves as needed
+    public ExampleInputListener listener;
     public WaveSettings[] waveSettings;
 
     void Start()
     {
+        listener = FindObjectOfType<ExampleInputListener>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        StartCoroutine(SpawnWaves());
-    }
+        // StartCoroutine(SpawnWaves());
 
+    }
+    private void Update() {
+        if (listener.movementVector== Vector2.zero)
+        {
+            return;
+        }
+        else{
+            GameObject enemy = Instantiate(enemyPrefab);
+            Vector3 spawnPosition = playerTransform.position + new Vector3(-listener.movementVector.x, 0f,-listener.movementVector.y)*radius;
+             enemy.transform.position = spawnPosition;
+        }
+    }
     IEnumerator SpawnWaves()
     {
         // Iterate through each wave
@@ -45,10 +58,12 @@ public class _06_EnemySpawner : MonoBehaviour
             Vector3 spawnPosition = playerTransform.position + new Vector3(x, 0f, z);
 
             // Instantiate the enemy at the calculated position
-            GameObject enemy = ObjectPooler.Instance.GetObjectFromPool("Enemy");
+            GameObject enemy = Instantiate(enemyPrefab);
+            if(enemy){
             enemy.transform.position = spawnPosition;
-            yield return new WaitForSeconds(currentWave.spawnInterval);
             enemy.SetActive(true);
+            }
+            yield return new WaitForSeconds(currentWave.spawnInterval);
         }
 
             // Wait for the specified interval before the next wave

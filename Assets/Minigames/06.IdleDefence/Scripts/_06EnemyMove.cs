@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Essentials;
 using UnityEngine;
 
 public class _06EnemyMove : MonoBehaviour
@@ -51,10 +52,11 @@ public class _06EnemyMove : MonoBehaviour
         transform.LookAt(playerTransform);
     }
 
-    void DeactivateEnemy()
+    public void DeactivateEnemy()
     {
         gameObject.SetActive(false);
         // Optionally, you might want to reset or do other cleanup before deactivating
         FindObjectOfType<_06PlayerShoot>().RemoveEnemy(gameObject);
+        ObjectPooler.Instance.ReturnObjectToPool("Enemy",gameObject);
     }
 }

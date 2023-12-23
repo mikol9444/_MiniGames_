@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class _06PlayerShoot : MonoBehaviour
 {
-public List<GameObject> enemiesInRange;
+    public List<GameObject> enemiesInRange;
     public Transform shootingPoint;
+    public GameObject projectilePrefab;
     public float attackSpeed = 1f; // Adjust this as needed
     private bool canAttack = true;
-
+    private void Awake() {
+        enemiesInRange = new List<GameObject>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
@@ -36,7 +39,7 @@ public List<GameObject> enemiesInRange;
         // Assuming you want to attack the first enemy in the list
         if(enemiesInRange.Count>0){
         GameObject enemyToAttack = enemiesInRange[0];
-        transform.LookAt(enemyToAttack.transform);
+        if (enemyToAttack)transform.LookAt(enemyToAttack.transform);
         GetComponent<Animator>().SetTrigger("throw");
         // Set a cooldown before the next attack
         StartCoroutine(AttackCooldown());
@@ -53,8 +56,8 @@ public List<GameObject> enemiesInRange;
 
     void ShootProjectile()
     {
-        GameObject projectile = ObjectPooler.Instance.GetObjectFromPool("Projectile");
-        projectile.transform.position = shootingPoint.position;
+        GameObject projectile = Instantiate(projectilePrefab,shootingPoint.position,Quaternion.identity);
+        // projectile.transform.position = shootingPoint.position;
         projectile.SetActive(true);
     }
 }
