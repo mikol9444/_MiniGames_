@@ -34,12 +34,6 @@ public class _06EnemyMove : MonoBehaviour
 
             // Check distance to player and deactivate if within threshold
             float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
-            if (distanceToPlayer <= deactivateThreshold)
-            {
-                // Optionally, you might want to play an explosion effect or trigger other actions
-                // before deactivating the enemy
-                DeactivateEnemy();
-            }
         }
     }
 
@@ -52,11 +46,5 @@ public class _06EnemyMove : MonoBehaviour
         transform.LookAt(playerTransform);
     }
 
-    public void DeactivateEnemy()
-    {
-        gameObject.SetActive(false);
-        // Optionally, you might want to reset or do other cleanup before deactivating
-        FindObjectOfType<_06PlayerShoot>().RemoveEnemy(gameObject);
-        ObjectPooler.Instance.ReturnObjectToPool("Enemy",gameObject);
-    }
+
 }

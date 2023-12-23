@@ -56,7 +56,7 @@ public class _01EvaGameMaster : MonoBehaviour
     }
     public void OnButton1Pressed()
     {
-        popup.OnActivate("cheater");
+        popup.OnActivate("WIN");
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
