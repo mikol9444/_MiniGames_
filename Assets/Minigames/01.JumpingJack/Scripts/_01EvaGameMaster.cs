@@ -41,7 +41,11 @@ public class _01EvaGameMaster : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         _01EvaCollisionHandler.deadAction += _DeathScore;
-        InputManager.Instance._Button1Event += OnButton1Pressed;
+        if (InputManager.Instance)
+        {
+            InputManager.Instance._Button1Event += OnButton1Pressed;
+        }
+
 
     }
     private void OnDisable()
@@ -52,7 +56,7 @@ public class _01EvaGameMaster : MonoBehaviour
     }
     public void OnButton1Pressed()
     {
-        popup.OnActivate("cheater");
+        popup.OnActivate("WIN");
     }
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {

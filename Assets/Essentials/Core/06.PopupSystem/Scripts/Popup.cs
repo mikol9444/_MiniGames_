@@ -8,7 +8,7 @@ public class Popup : MonoBehaviour
     public AnimationClip popinClip;
     public AnimationClip popupClip;
     public TextMeshProUGUI txt;
-    private string welcomeText="Hello World";
+    private string welcomeText = "Hello World";
     private void Awake()
     {
         anim = GetComponent<Animation>();
@@ -18,7 +18,7 @@ public class Popup : MonoBehaviour
         txt.text = welcomeText;
     }
     public void SetActiveFalse() => gameObject.SetActive(false);
-    public void OnActivate(string context=default)
+    public void OnActivate(string context = default)
     {
         gameObject.SetActive(true);
         txt.text = context;
@@ -32,4 +32,9 @@ public class Popup : MonoBehaviour
 
     }
     public void SetText(string note) => welcomeText = note;
+    public void SetTextAndPlayAnimation(string note)
+    {
+        txt.text = note;
+        anim.Play();
+    }
 }

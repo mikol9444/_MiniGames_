@@ -15,6 +15,6 @@ public class _02DistanceText : MonoBehaviour
     }
     void Update()
     {
-        txt.text = "Destance: " + playerTransform.position.x.ToString("0") + " m";
+        txt.text = "Distance: " + playerTransform.position.x.ToString("0") + " m";
     }
 }

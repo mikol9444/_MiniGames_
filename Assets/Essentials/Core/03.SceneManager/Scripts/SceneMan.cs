@@ -43,6 +43,6 @@ public class SceneMan : MonoBehaviour
         anim.SetTrigger("start");
     }
     public void OnEndScene() => anim.SetTrigger("end");
-    public void StartReloadScene() => anim.SetTrigger("reload");
+    public void StartReloadScene() => anim.SetTrigger("reload"); //
     public void ReturnToMenu() => LoadScene("startmenu");
 }

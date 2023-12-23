@@ -12,7 +12,7 @@ namespace Essentials
         public bool button3Pressed;
         public bool pausePressed;
 
-        private void OnEnable()
+        private void Start()
         {
             InputManager.Instance._MovementEvent += OnMove;
             InputManager.Instance._JumpEvent += OnJump;

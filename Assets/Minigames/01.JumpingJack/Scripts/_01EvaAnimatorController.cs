@@ -24,10 +24,17 @@ public class _01EvaAnimatorController : MonoBehaviour
         InputManager.Instance._CrouchEvent -= OnCrouchPerformed;
         InputManager.Instance._MovementEvent -= OnMovementActive;
     }
-    private void OnJumpPerformed(bool state)
+    public void SetBlendValue(float value)
+    {
+        anim.SetFloat("jumpBlend", value);
+    }
+    public void setGroundedValue(bool value)
+    {
+        anim.SetBool("isGrounded", value);
+    }
+    public void OnJumpPerformed(bool state)
     {
         anim.SetBool("jump", state);
-
     }
     private void OnCrouchPerformed(bool state)
     {

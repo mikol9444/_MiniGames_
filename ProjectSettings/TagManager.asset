@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Start
   - Popup
+  - Platform
   layers:
   - Default
   - TransparentFX
