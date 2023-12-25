@@ -104,6 +104,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Minigames/09.MineSweeper/_09MineSweeper.unity
     guid: ee8b6c595006b0441a271651a61bb407
+  - enabled: 1
+    path: Assets/Minigames/10.2048/_10_2048_Scene.unity
+    guid: f91039f54f34ae347a5fd2625d04af30
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3d55655c6818e3f49a91bbf0e4f0eb87, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: c91e83e8e01af214998ec14c749a041d, type: 2}

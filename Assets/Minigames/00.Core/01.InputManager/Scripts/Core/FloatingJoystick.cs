@@ -73,7 +73,7 @@ namespace Essentials
             SendValueToControl(newPos);
         }
 
-        public void OnPointerUp(PointerEventData eventData)
+        public virtual void OnPointerUp(PointerEventData eventData)
         {
             Knob.anchoredPosition = startPos;
             SendValueToControl(Vector2.zero);
@@ -88,7 +88,7 @@ namespace Essentials
         #endregion
 
         //Lerp transparancy Color on 4 Images of a joystick from 0 to 1, depending on Vector2 direction as Parameter
-        public void QuadrantMarker(Vector2 direction)
+        public virtual void QuadrantMarker(Vector2 direction)
         {
             Color color = moveColor;
             color.a = 0;
@@ -104,17 +104,17 @@ namespace Essentials
                 quadrantImages[0].enabled = true;
                 quadrantImages[0].color = color;
             }
-            else if (angle > 90f && angle <= 180f)
+            if (angle > 90f && angle <= 180f)
             {
                 quadrantImages[1].enabled = true;
                 quadrantImages[1].color = color;
             }
-            else if (angle < -90f && angle > -180f)
+            if (angle < -90f && angle > -180f)
             {
                 quadrantImages[2].enabled = true;
                 quadrantImages[2].color = color;
             }
-            else if (angle < 0f && angle >= -90f)
+            if (angle < 0f && angle >= -90f)
             {
                 quadrantImages[3].enabled = true;
                 quadrantImages[3].color = color;
