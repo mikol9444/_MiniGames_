@@ -12,6 +12,7 @@ TagManager:
   - Start
   - Popup
   - Platform
+  - Cell
   layers:
   - Default
   - TransparentFX

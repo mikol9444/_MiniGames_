@@ -34,6 +34,9 @@ void Update()
             FindObjectOfType<_06PlayerShoot>().RemoveEnemy(collision.gameObject);
             Destroy(collision.gameObject);
             Destroy(gameObject) ;
+            _06_EnemySpawner spawner = FindObjectOfType<_06_EnemySpawner>();
+            spawner.enemyCount--;
+            spawner.textMesh.text = spawner.enemyCount.ToString();
         }
     }
 }

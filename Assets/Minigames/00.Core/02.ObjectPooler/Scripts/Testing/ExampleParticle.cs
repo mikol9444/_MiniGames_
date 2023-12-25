@@ -38,6 +38,6 @@ public class ExampleParticle : MonoBehaviour
     }
     private void ReturnToPool()
     {
-        ObjectPooler.Instance.ReturnObjectToPool(poolName, gameObject);
+        ObjectPoolManager.ReturnObjectToPool(gameObject);
     }
 }

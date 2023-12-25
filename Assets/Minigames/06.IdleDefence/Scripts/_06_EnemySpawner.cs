@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Essentials;
+using TMPro;
 public class _06_EnemySpawner : MonoBehaviour
 {
    // Struct to store wave settings
@@ -21,6 +22,8 @@ public class _06_EnemySpawner : MonoBehaviour
     public float timeBetweenWaves = 5f; // Adjust this time between waves as needed
     public ExampleInputListener listener;
     public WaveSettings[] waveSettings;
+    public TextMeshProUGUI textMesh;
+    public int enemyCount;
 
     void Start()
     {
@@ -35,9 +38,11 @@ public class _06_EnemySpawner : MonoBehaviour
             return;
         }
         else{
-            GameObject enemy = Instantiate(enemyPrefab);
+            GameObject enemy = ObjectPoolManager.SpawnObject(enemyPrefab,transform);
             Vector3 spawnPosition = playerTransform.position + new Vector3(-listener.movementVector.x, 0f,-listener.movementVector.y)*radius;
              enemy.transform.position = spawnPosition;
+             enemyCount++;
+             textMesh.text =enemyCount.ToString();
         }
     }
     IEnumerator SpawnWaves()

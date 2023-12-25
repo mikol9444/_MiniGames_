@@ -13,16 +13,11 @@ namespace Essentials
     {
         public static ObjectPooler Instance;
         //Playceholder child classes to devide pools in categories
-        [System.Serializable]
-        public class Pool_01 : Pool { }
-        [System.Serializable]
-        public class Pool_02 : Pool { }
-        [System.Serializable]
-        public class Pool_03 : Pool { }
 
-        [SerializeField] private Pool_01[] particles;
-        [SerializeField] private Pool_02[] projectiles;
-        [SerializeField] private Pool_03[] enemies;
+
+        [SerializeField] private Pool[] particles;
+        [SerializeField] private Pool[] projectiles;
+        [SerializeField] private Pool[] enemies;
 
         private Dictionary<string, Pool> poolDictionary = new Dictionary<string, Pool>();
         //Singleton
