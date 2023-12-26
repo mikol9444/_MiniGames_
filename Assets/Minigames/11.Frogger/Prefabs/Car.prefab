@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 944374897574125763}
   - component: {fileID: 944374897574125762}
-  - component: {fileID: 1767420885086546321}
   - component: {fileID: 8610351234978187455}
+  - component: {fileID: 8714061122166854626}
   m_Layer: 0
   m_Name: Car
   m_TagString: Enemy
@@ -48,28 +48,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.5, z: 0.8}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &1767420885086546321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944374897574125761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b9189f9cf758fd4c88c8c24fbc9d331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementType: 1
-  pingPongActive: 0
-  pingAndPong: 0
-  movementSpeed: 1.5
-  timeTillDestination: 15
-  destination: {x: -30, y: 0, z: 0}
-  startPosition: {x: 0, y: 0, z: 0}
-  circleRadius: 1.5
-  spiralRadius: 2
-  spiralFrequency: 2
 --- !u!54 &8610351234978187455
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -86,6 +64,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &8714061122166854626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944374897574125761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4584100470a41a408028580db89d717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getPooled: 1
+  destination: {x: 30, y: 0, z: 0}
+  timeTillDestination: 8
+  moveSpeed: 3
+  moveRight: 0
 --- !u!1 &1523322624219299227
 GameObject:
   m_ObjectHideFlags: 0

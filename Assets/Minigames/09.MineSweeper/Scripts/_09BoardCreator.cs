@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class _09BoardCreator : MonoBehaviour
 {   [SerializeField] private int length=9;
-    [SerializeField] private int width=9;
+    // [SerializeField] private int width=9;
     [SerializeField] GameObject cellPrefab;
     _09GameLogic gameLogic;
 

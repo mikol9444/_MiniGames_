@@ -31,7 +31,7 @@ public class _05GameManager01 : MonoBehaviour, IPointerDownHandler
     [SerializeField] private _05MovingPlatform01 LastPlatform;// Reference to the last platform Gameobject to instantiate
     [SerializeField] private Vector3 spawnPosition = Vector3.zero; // Initial spawn position
     [SerializeField] private int PlatformCount = 0;
-    [SerializeField] private float direction = 1f;
+    // [SerializeField] private float direction = 1f;
 
     private void Awake()
     {

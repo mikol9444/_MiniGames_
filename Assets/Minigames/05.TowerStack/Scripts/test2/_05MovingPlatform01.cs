@@ -7,7 +7,7 @@ public class _05MovingPlatform01 : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 1f;
     public float Speed { get { return moveSpeed; } set { moveSpeed = value; } }
-    [SerializeField] private bool lookLeft = true; // New bool for looking direction
+    // [SerializeField] private bool lookLeft = true; // New bool for looking direction
     public float movementDirection = 1f; // Forward or backward movement direction
     private Vector3 initialPosition; // Initial position to move back to
     [SerializeField] public float moveDistance { get; set; }
