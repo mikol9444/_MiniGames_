@@ -887,14 +887,14 @@ PrefabInstance:
     - target: {fileID: 4878212747320192190, guid: 3ccdc6e52a9c16c47bc49041934d826a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1900130572}
+      objectReference: {fileID: 1900130575}
     - target: {fileID: 4878212747320192190, guid: 3ccdc6e52a9c16c47bc49041934d826a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SpawnCell
       objectReference: {fileID: 0}
     - target: {fileID: 4878212747320192190, guid: 3ccdc6e52a9c16c47bc49041934d826a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: _10_GameManager, Assembly-CSharp
+      value: _10_GameManager20, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ccdc6e52a9c16c47bc49041934d826a, type: 3}
@@ -1793,8 +1793,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1900130573}
-  - component: {fileID: 1900130572}
   - component: {fileID: 1900130574}
+  - component: {fileID: 1900130575}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1802,19 +1802,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1900130572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900130571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d83d64dc1c18e83408d74c061d7e05f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cellPrefab: {fileID: 1589490331784978243, guid: f563d231b5cc8864f8d8b46c05a4cec4, type: 3}
 --- !u!4 &1900130573
 Transform:
   m_ObjectHideFlags: 0
@@ -1842,6 +1829,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7671ddfcecec2dd4c8c537642a6c44e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1900130575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900130571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d6ea855718e26a4e9a2afe66c86e011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellPrefab: {fileID: 1589490331784978243, guid: f563d231b5cc8864f8d8b46c05a4cec4, type: 3}
+  isInitialized: 0
+  debugTimer: 0.05
 --- !u!224 &1359769143096061658
 RectTransform:
   m_ObjectHideFlags: 0

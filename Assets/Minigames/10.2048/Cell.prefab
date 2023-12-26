@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2946e157255e8e141b87a5dc00c675f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentNumber: 0
   txt: {fileID: 4257268484071028447}
+  indices: {fileID: 0}
 --- !u!33 &1589490331784978240
 MeshFilter:
   m_ObjectHideFlags: 0

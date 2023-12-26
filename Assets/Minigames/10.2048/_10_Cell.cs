@@ -4,13 +4,20 @@ using UnityEngine;
 using TMPro;
 public class _10_Cell : MonoBehaviour
 {
-    public int currentNumber=0;
+    private int currentNumber=0;
+    public int CurrentNumber {get=>currentNumber; set {
+        currentNumber=value;
+        if(value == 0)txt.text ="";
+        else
+        txt.text=value.ToString();}
+        }
     public TextMeshProUGUI txt;
 
-    private void Start() {
-        ChangeNumber(2);
-    }
-    public void ChangeNumber(int num){
+
+    public void Initialize(int num){
+        currentNumber = num;
         txt.text = num.ToString();
+        // indices.text = "("+i + "," + j+")";
+        // gameObject.SetActive(false);
     }
 }

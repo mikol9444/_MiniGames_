@@ -11,8 +11,8 @@ public class TweenAnimator : MonoBehaviour
     public bool pingAndPong = false;
     [SerializeField] [Range(0.1f, 50f)] private float movementSpeed = 1.5f;
     [SerializeField] [Range(0.1f, 25f)] protected float timeTillDestination = 1.5f;
-    [SerializeField] private Vector3 destination = Vector3.up;
-    [SerializeField] private Vector3 startPosition = Vector3.up;
+    [SerializeField] public Vector3 destination = Vector3.up;
+    [SerializeField] protected Vector3 startPosition = Vector3.up;
     [SerializeField] float circleRadius = 1.5f;
 
     [SerializeField] private float spiralRadius = 2f;
@@ -26,7 +26,7 @@ public class TweenAnimator : MonoBehaviour
 
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
         onStart = () =>
         {
@@ -55,7 +55,7 @@ public class TweenAnimator : MonoBehaviour
             Debug.LogWarning("Routine in Progress, wait till finished or Press Stop Button");
             return;
         }
-        onStart();
+        // onStart();
         switch (movementType)
         {
             case MovementType.ToWorldPosition:
@@ -75,7 +75,7 @@ public class TweenAnimator : MonoBehaviour
     public void StopAll()
     {
         StopAllCoroutines();
-        onComplete();
+        // onComplete();
     }
     public virtual void PingPong() => pingPongActive = !pingPongActive;
     private IEnumerator MoveToRoutine()
@@ -105,7 +105,7 @@ public class TweenAnimator : MonoBehaviour
             transform.position = Vector3.Lerp(a, b, t);
             yield return null;
         }
-        onComplete();
+        // onComplete();
     }
     private IEnumerator CircleRoutine()
     {

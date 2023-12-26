@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Essentials;
+using UnityEngine;
 using UnityEngine.EventSystems;
-public class _10_SwipeDetector : FloatingJoystick
+public class _11_Swiper : FloatingJoystick
 {
-    private ExampleInputListener listener;
-    private _10_GameManager20 manager;
-
+        private ExampleInputListener listener;
+        private _11_FroggerController controller;
     private void Start()
     {
         listener = FindObjectOfType<ExampleInputListener>();
-        manager = FindObjectOfType<_10_GameManager20>();
+        controller = FindObjectOfType<_11_FroggerController>();
     }
     public override void OnPointerUp(PointerEventData eventData)
     {
@@ -19,34 +18,32 @@ public class _10_SwipeDetector : FloatingJoystick
 
         if (listener.movementVector.x > 0.8f)
         {
+            controller.Jump(Vector2.right);
             Debug.Log("right");
-            manager.StartCoroutine(manager.MergeCellsRight());
         }
         else if (listener.movementVector.x < -0.8f)
         {
+            controller.Jump(Vector2.left);
             Debug.Log("left");
-            manager.StartCoroutine(manager.MergeCellsLeft());
         }
         if (listener.movementVector.y > 0.8f)
         {
+            controller.Jump(Vector2.up);
             Debug.Log("up");
-            manager.StartCoroutine(manager.MergeCellsUp());
         }
         else if (listener.movementVector.y < -0.8f)
         {
+            controller.Jump(Vector2.down);
             Debug.Log("down");
-            manager.StartCoroutine(manager.MergeCellsDown());
         }
 
-        else{
-            Debug.LogWarning("ADGLMSDÖLGMSDAÖLFGSDDLÖFG");
-        }
 
 
     }
+
     public override void QuadrantMarker(Vector2 direction)
     {
-        return;
         // base.QuadrantMarker(direction);
+
     }
 }
