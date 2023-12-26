@@ -110,6 +110,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Minigames/11.Frogger/_11_Frogger.unity
     guid: 634ded28cde3cf7478eea2cef96c1e66
+  - enabled: 1
+    path: Assets/Minigames/12.BomberMan/_12_BomberManScene.unity
+    guid: 278fb81c928f4184f918e75ca3615daf
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3d55655c6818e3f49a91bbf0e4f0eb87, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: c91e83e8e01af214998ec14c749a041d, type: 2}
