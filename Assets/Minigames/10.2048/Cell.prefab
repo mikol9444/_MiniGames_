@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 4257268484071028447}
-  indices: {fileID: 0}
+  rend: {fileID: 1589490331784978241}
 --- !u!33 &1589490331784978240
 MeshFilter:
   m_ObjectHideFlags: 0

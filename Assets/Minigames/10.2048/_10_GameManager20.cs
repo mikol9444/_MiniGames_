@@ -14,11 +14,51 @@ public class _10_GameManager20 : MonoBehaviour
     public int[,] tmp;
     public bool isInitialized = false;
     public float debugTimer = 0.5f;
-    private void Start() {slider =FindObjectOfType<Slider>();}
+    private void Start() {}
     public void OnSliderValueChange(){
         size = Convert.ToInt32(slider.value);
         slider.GetComponentInChildren<TextMeshProUGUI>().text = slider.value.ToString();
     }
+        // Function to check if every element has a different number compared to its neighbors
+bool CheckAllDifferent()
+{
+    if(myCellArray.Cast<_10_Cell>().Any(cell => cell.CurrentNumber == 0)){
+        return false;
+    }
+
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            // Check neighbors to the right
+            if (j + 1 < size && myCellArray[i,j].CurrentNumber == myCellArray[i, j + 1].CurrentNumber)
+            {
+                return false;
+            }
+
+            // Check neighbors below
+            if (i + 1 < size && myCellArray[i,j].CurrentNumber == myCellArray[i + 1, j].CurrentNumber)
+            {
+                return false;
+            }
+
+            // Check neighbors to the left
+            if (j - 1 >= 0 && myCellArray[i,j].CurrentNumber == myCellArray[i, j - 1].CurrentNumber)
+            {
+                return false;
+            }
+
+            // Check neighbors above
+            if (i - 1 >= 0 && myCellArray[i,j].CurrentNumber == myCellArray[i - 1, j].CurrentNumber)
+            {
+                return false;
+            }
+        }
+    }
+
+    // All elements have different neighbors
+    return true;
+}
     public void CreateBoard()
     {
         myCellArray = new _10_Cell[size, size];
@@ -94,18 +134,41 @@ public class _10_GameManager20 : MonoBehaviour
                 // Handle any other cases or provide a default action
                 break;
         }
-        if(Contains2048()){
+        int num = size>8? 4096:2048;
+        if (size>12) num = 8192;
+        if(Contains2048(num)){
             Debug.LogWarning("YOU WON!?!");
             FindObjectOfType<Popup>().OnActivate("YOU WON! RESTART?");
             FindObjectOfType<_10_SwipeDetector>().enabled=false;
+            FindObjectOfType<_10_SwipeDetector>().StopSwiping();
+            FindObjectOfType<_10_SwipeDetector>().StopSwiping2();
+            this.enabled = false;
         }
+        ChangeCellColors();
+        if(CheckAllDifferent()){
+            Debug.LogWarning("YOU LOST!?!");
+            FindObjectOfType<Popup>().OnActivate("YOU LOST! RESTART?");
+            FindObjectOfType<_10_SwipeDetector>().StopSwiping();
+            FindObjectOfType<_10_SwipeDetector>().StopSwiping2();
+            FindObjectOfType<_10_SwipeDetector>().enabled=false;
+            this.enabled = false;
+        }
+    }
+    private void ChangeCellColors(){
+        for (int i = 0; i < size; i++)
+            for (int j = 0; j < size; j++)
+            {
+                myCellArray[i,j].UpdateCellColor();
+            }
+            
+        
     }
 
     #region GAMELOGIC
-        public bool Contains2048()
+        public bool Contains2048(int number)
     {
         // Check if any element in the 2D array equals 2048
-        return myCellArray.Cast<_10_Cell>().Any(x => x.CurrentNumber == 2048);
+        return myCellArray.Cast<_10_Cell>().Any(x => x.CurrentNumber == number);
     }
     public void CopyCellArray()
     {

@@ -269,7 +269,8 @@ PrefabInstance:
       propertyPath: thresholdAngle
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 181037115, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
 --- !u!224 &135176119 stripped
 RectTransform:
@@ -422,7 +423,8 @@ PrefabInstance:
       propertyPath: thresholdAngle
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 181037115, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
 --- !u!224 &217207074 stripped
 RectTransform:
@@ -961,7 +963,8 @@ PrefabInstance:
       propertyPath: thresholdAngle
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 181037115, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
 --- !u!224 &720851796 stripped
 RectTransform:
@@ -1410,7 +1413,8 @@ PrefabInstance:
       propertyPath: thresholdAngle
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 181037115, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
 --- !u!224 &1118526175 stripped
 RectTransform:
@@ -1532,7 +1536,8 @@ PrefabInstance:
       propertyPath: thresholdAngle
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 181037115, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
 --- !u!224 &1126194573 stripped
 RectTransform:
@@ -1778,7 +1783,8 @@ PrefabInstance:
       propertyPath: thresholdAngle
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 181037115, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
 --- !u!224 &1355600211 stripped
 RectTransform:
@@ -2025,7 +2031,8 @@ PrefabInstance:
       propertyPath: thresholdAngle
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 181037115, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
 --- !u!224 &1620102859 stripped
 RectTransform:
@@ -2147,7 +2154,8 @@ PrefabInstance:
       propertyPath: thresholdAngle
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 181037115, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
 --- !u!224 &1659773084 stripped
 RectTransform:
@@ -2958,7 +2966,8 @@ PrefabInstance:
       propertyPath: thresholdAngle
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 181037115, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
 --- !u!224 &2121659261 stripped
 RectTransform:
@@ -3225,5 +3234,6 @@ PrefabInstance:
       propertyPath: projectileSpeed
       value: 15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 181037115, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dcd831e7b48cbf1459a28e8e6485758e, type: 3}

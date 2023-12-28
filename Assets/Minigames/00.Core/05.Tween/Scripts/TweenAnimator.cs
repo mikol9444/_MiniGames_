@@ -59,10 +59,10 @@ public class TweenAnimator : MonoBehaviour
         switch (movementType)
         {
             case MovementType.ToWorldPosition:
-                StartCoroutine(nameof(MoveToRoutine));
+                StartCoroutine(nameof(MoveToWorld));
                 break;
             case MovementType.ToLocalPosition:
-                StartCoroutine(nameof(MoveByRoutine));
+                StartCoroutine(nameof(MoveToLocal));
                 break;
             case MovementType.Circle:
                 StartCoroutine(nameof(CircleRoutine));
@@ -78,7 +78,7 @@ public class TweenAnimator : MonoBehaviour
         // onComplete();
     }
     public virtual void PingPong() => pingPongActive = !pingPongActive;
-    private IEnumerator MoveToRoutine()
+    protected virtual IEnumerator MoveToWorld()
     {
         Vector3 a = transform.position;
         Vector3 b = pingAndPong ? startPosition : destination;
@@ -91,9 +91,10 @@ public class TweenAnimator : MonoBehaviour
             yield return null;
         }
         onComplete();
+        // transform.rotation= Quaternion.Euler(0,-120,0);
     }
 
-    protected virtual IEnumerator MoveByRoutine()
+    protected virtual IEnumerator MoveToLocal()
     {
         Vector3 a = transform.position;
         Vector3 b = pingAndPong ? startPosition : transform.position + destination;
@@ -122,6 +123,7 @@ public class TweenAnimator : MonoBehaviour
 
             yield return null;
         }
+        
         transform.position = startPosition;
         onComplete();
     }

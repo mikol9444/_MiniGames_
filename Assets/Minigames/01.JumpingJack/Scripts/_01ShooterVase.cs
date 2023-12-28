@@ -7,7 +7,7 @@ public class _01ShooterVase : TweenAnimator
     public GameObject projectile;
     public Transform shootingPoint;
     public Vector3 lookingRotation; 
-    protected override IEnumerator MoveByRoutine()
+    protected override IEnumerator MoveToLocal()
     {
         if (pingAndPong)
         {
@@ -15,7 +15,7 @@ public class _01ShooterVase : TweenAnimator
             AudioManager_Test.Instance.PlaySound("shoot");
             Destroy(obj, 2f);
         }
-        return base.MoveByRoutine();
+        return base.MoveToLocal();
 
     }
 }
